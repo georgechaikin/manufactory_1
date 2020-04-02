@@ -32,17 +32,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.productSum_textBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.productType_textBox = new System.Windows.Forms.TextBox();
+            this.productName_textBox = new System.Windows.Forms.TextBox();
+            this.client_textBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.productSize_textBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.productCost_textBox = new System.Windows.Forms.TextBox();
+            this.addOrder_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -87,10 +87,10 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(93, 172);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(271, 20);
-            this.textBox3.TabIndex = 6;
+            this.productSum_textBox.Location = new System.Drawing.Point(93, 172);
+            this.productSum_textBox.Name = "textBox3";
+            this.productSum_textBox.Size = new System.Drawing.Size(271, 20);
+            this.productSum_textBox.TabIndex = 6;
             // 
             // label5
             // 
@@ -114,24 +114,24 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(93, 263);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(271, 20);
-            this.textBox4.TabIndex = 9;
+            this.productType_textBox.Location = new System.Drawing.Point(93, 263);
+            this.productType_textBox.Name = "textBox4";
+            this.productType_textBox.Size = new System.Drawing.Size(271, 20);
+            this.productType_textBox.TabIndex = 9;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(93, 124);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(271, 20);
-            this.textBox5.TabIndex = 10;
+            this.productName_textBox.Location = new System.Drawing.Point(93, 124);
+            this.productName_textBox.Name = "textBox5";
+            this.productName_textBox.Size = new System.Drawing.Size(271, 20);
+            this.productName_textBox.TabIndex = 10;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(93, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(271, 20);
-            this.textBox1.TabIndex = 11;
+            this.client_textBox.Location = new System.Drawing.Point(93, 41);
+            this.client_textBox.Name = "textBox1";
+            this.client_textBox.Size = new System.Drawing.Size(271, 20);
+            this.client_textBox.TabIndex = 11;
             // 
             // label7
             // 
@@ -144,10 +144,10 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(93, 316);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(271, 20);
-            this.textBox2.TabIndex = 13;
+            this.productSize_textBox.Location = new System.Drawing.Point(93, 316);
+            this.productSize_textBox.Name = "textBox2";
+            this.productSize_textBox.Size = new System.Drawing.Size(271, 20);
+            this.productSize_textBox.TabIndex = 13;
             // 
             // label8
             // 
@@ -160,36 +160,36 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(93, 367);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(271, 20);
-            this.textBox6.TabIndex = 15;
+            this.productCost_textBox.Location = new System.Drawing.Point(93, 367);
+            this.productCost_textBox.Name = "textBox6";
+            this.productCost_textBox.Size = new System.Drawing.Size(271, 20);
+            this.productCost_textBox.TabIndex = 15;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(29, 419);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(334, 52);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addOrder_button.Location = new System.Drawing.Point(29, 419);
+            this.addOrder_button.Name = "button1";
+            this.addOrder_button.Size = new System.Drawing.Size(334, 52);
+            this.addOrder_button.TabIndex = 16;
+            this.addOrder_button.Text = "Добавить";
+            this.addOrder_button.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 635);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.addOrder_button);
+            this.Controls.Add(this.productCost_textBox);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.productSize_textBox);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.client_textBox);
+            this.Controls.Add(this.productName_textBox);
+            this.Controls.Add(this.productType_textBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.productSum_textBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -207,17 +207,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox productSum_textBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox productType_textBox;
+        private System.Windows.Forms.TextBox productName_textBox;
+        private System.Windows.Forms.TextBox client_textBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox productSize_textBox;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox productCost_textBox;
+        private System.Windows.Forms.Button addOrder_button;
     }
 }
 
