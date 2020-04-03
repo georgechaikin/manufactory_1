@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.productSum_textBox = new System.Windows.Forms.TextBox();
+            this.productAmount_textBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.productType_textBox = new System.Windows.Forms.TextBox();
@@ -87,10 +87,10 @@
             // 
             // textBox3
             // 
-            this.productSum_textBox.Location = new System.Drawing.Point(93, 172);
-            this.productSum_textBox.Name = "textBox3";
-            this.productSum_textBox.Size = new System.Drawing.Size(271, 20);
-            this.productSum_textBox.TabIndex = 6;
+            this.productAmount_textBox.Location = new System.Drawing.Point(93, 172);
+            this.productAmount_textBox.Name = "textBox3";
+            this.productAmount_textBox.Size = new System.Drawing.Size(271, 20);
+            this.productAmount_textBox.TabIndex = 6;
             // 
             // label5
             // 
@@ -189,7 +189,7 @@
             this.Controls.Add(this.productType_textBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.productSum_textBox);
+            this.Controls.Add(this.productAmount_textBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -207,7 +207,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox productSum_textBox;
+        private System.Windows.Forms.TextBox productAmount_textBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox productType_textBox;
