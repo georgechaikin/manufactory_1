@@ -134,6 +134,8 @@ namespace Manufactory
             double product_cost;
             try
             {
+                //TODO: Ловить также случаи, когда стоимость переполнена(цена*количество)
+
                 product_amount = Convert.ToInt32(order_parametres["product amount"]);
                 //TODO: Разобраться с форматом ввода "," и "."
                 product_cost = Convert.ToDouble(order_parametres["product cost"]);
@@ -156,7 +158,14 @@ namespace Manufactory
             table_sheet.GetRow(rownum).CreateCell(3).SetCellValue(order_parametres["product type"]);
             table_sheet.GetRow(rownum).CreateCell(4).SetCellValue(order_parametres["product size"]);
             table_sheet.GetRow(rownum).CreateCell(5).SetCellValue(product_cost);
-            //table_sheet.GetRow(rownum).GetCell(0).CellStyle.IsLocked=false;
+
+            table_sheet.GetRow(rownum).GetCell(0).CellStyle.IsLocked = false;
+            table_sheet.GetRow(rownum).GetCell(1).CellStyle.IsLocked = false;
+            table_sheet.GetRow(rownum).GetCell(2).CellStyle.IsLocked = false;
+            table_sheet.GetRow(rownum).GetCell(3).CellStyle.IsLocked = false;
+            table_sheet.GetRow(rownum).GetCell(4).CellStyle.IsLocked = false;
+            table_sheet.GetRow(rownum).GetCell(5).CellStyle.IsLocked = false;
+
 
 
 
