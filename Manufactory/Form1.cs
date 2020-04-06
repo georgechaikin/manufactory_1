@@ -114,7 +114,7 @@ namespace Manufactory
                 using (var fileStream=new FileStream(table_path,FileMode.Create,FileAccess.Write))
             {
 
-                    workbook.Write(fileStream)
+                    workbook.Write(fileStream);
                     MessageBox.Show("Заказ добавлен");
                 //fileStream.Close();
             }
@@ -149,13 +149,15 @@ namespace Manufactory
                 return !success;
             }
 
-            table_sheet.GetRow(rownum).RowStyle = table_sheet.GetRow(rownum - 1).RowStyle;
+            //table_sheet.GetRow(rownum).RowStyle = table_sheet.GetRow(rownum - 1).RowStyle;
             table_sheet.GetRow(rownum).CreateCell(0).SetCellValue(order_parametres["client"]);
             table_sheet.GetRow(rownum).CreateCell(1).SetCellValue(order_parametres["product name"]);
             table_sheet.GetRow(rownum).CreateCell(2).SetCellValue(product_amount);
             table_sheet.GetRow(rownum).CreateCell(3).SetCellValue(order_parametres["product type"]);
             table_sheet.GetRow(rownum).CreateCell(4).SetCellValue(order_parametres["product size"]);
             table_sheet.GetRow(rownum).CreateCell(5).SetCellValue(product_cost);
+            //table_sheet.GetRow(rownum).GetCell(0).CellStyle.IsLocked=false;
+
 
 
             return success;
