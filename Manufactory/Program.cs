@@ -16,8 +16,8 @@ namespace Manufactory
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1("Таблица заказов.xlsx","Входящие"));
-            Application.Run(new Form2());
+            //Application.Run(new Form1("Таблица заказов.xlsx", "Входящие"));
+            Application.Run(new Form2("Таблица заказов.xlsx", "Входящие"));
         }
     }
 }
