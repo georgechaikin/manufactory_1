@@ -1,6 +1,6 @@
 ﻿namespace Manufactory
 {
-    partial class Form2
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -26,27 +26,27 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent(string path, string table_name)
+        private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.addOrder_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.actual_dataGridView = new System.Windows.Forms.DataGridView();
-            this.past_dataGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.actual_dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.past_dataGridView)).BeginInit();
+            this.actualDataGridView = new System.Windows.Forms.DataGridView();
+            this.pastDataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.actualDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pastDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // addOrder_button
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(482, 8);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 51);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addOrder_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addOrder_button.Location = new System.Drawing.Point(482, 8);
+            this.addOrder_button.Margin = new System.Windows.Forms.Padding(2);
+            this.addOrder_button.Name = "addOrder_button";
+            this.addOrder_button.Size = new System.Drawing.Size(61, 51);
+            this.addOrder_button.TabIndex = 0;
+            this.addOrder_button.Text = "+";
+            this.addOrder_button.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -72,36 +72,36 @@
             // 
             // actual_dataGridView
             // 
-            this.actual_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.actual_dataGridView.Location = new System.Drawing.Point(13, 150);
-            this.actual_dataGridView.Name = "actual_dataGridView";
-            this.actual_dataGridView.Size = new System.Drawing.Size(453, 126);
-            this.actual_dataGridView.TabIndex = 3;
+            this.actualDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.actualDataGridView.Location = new System.Drawing.Point(13, 150);
+            this.actualDataGridView.Name = "actual_dataGridView";
+            this.actualDataGridView.Size = new System.Drawing.Size(453, 126);
+            this.actualDataGridView.TabIndex = 3;
             // 
             // dataGridView1
             // 
-            this.past_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.past_dataGridView.Location = new System.Drawing.Point(13, 329);
-            this.past_dataGridView.Name = "past_dataGridView";
-            this.past_dataGridView.Size = new System.Drawing.Size(453, 168);
-            this.past_dataGridView.TabIndex = 4;
+            this.pastDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.pastDataGridView.Location = new System.Drawing.Point(13, 329);
+            this.pastDataGridView.Name = "past_dataGridView";
+            this.pastDataGridView.Size = new System.Drawing.Size(453, 168);
+            this.pastDataGridView.TabIndex = 4;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 509);
-            this.Controls.Add(this.past_dataGridView);
-            this.Controls.Add(this.actual_dataGridView);
+            this.Controls.Add(this.pastDataGridView);
+            this.Controls.Add(this.actualDataGridView);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.addOrder_button);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form2";
             this.Text = "Form2";
             //this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.actual_dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.past_dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actualDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pastDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,10 +109,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addOrder_button;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView actual_dataGridView;
-        private System.Windows.Forms.DataGridView past_dataGridView;
+        private System.Windows.Forms.DataGridView actualDataGridView;
+        private System.Windows.Forms.DataGridView pastDataGridView;
     }
 }

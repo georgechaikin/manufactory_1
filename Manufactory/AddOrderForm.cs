@@ -13,20 +13,22 @@ using NPOI.XSSF.UserModel; //XSSFWorkbook, XSSFSheet для xlsx файлов
 
 namespace Manufactory
 {
-    public partial class Form1 : Form
-    {
-        private System.Windows.Forms.DataGridView data_grid;
+    public partial class AddOrderForm : Form
+    { 
         private XSSFWorkbook workbook;
-        private XSSFSheet table_sheet;
-        private string table_path;
+        private XSSFSheet tableSheet;
+        private string workbookPath;
+        private MainForm mainForm;
         //Здесь можно передавать DataGridView через другое приложение
-        public Form1(string table_path, string sheet_name)
+        public AddOrderForm(MainForm mainForm)
         {
             //string path = "Таблица заказов.xlsx";
             InitializeComponent();
             addOrder_button.Click+= new System.EventHandler(this.add_data);
-            this.Load+=(object sender,EventArgs e)=>this.load_Table(table_path,sheet_name, sender, e);
-            this.table_path = table_path;
+            this.Load+=(object sender,EventArgs e)=>this.load_Table(mainForm.workbookPath,mainForm.sheetName, sender, e);
+            this.mainForm = mainForm;
+            this.FormClosed += new FormClosedEventHandler(this.enableMainForm);
+            this.workbookPath = mainForm.workbookPath;
         }
 
         private void load_Table(string table_path,string sheet_name,object sender, EventArgs e)
@@ -42,11 +44,11 @@ namespace Manufactory
             using (var file_stream=new FileStream(table_path, FileMode.Open, FileAccess.Read))
             {
                 workbook = new XSSFWorkbook(file_stream);
-                table_sheet = (XSSFSheet)workbook.GetSheet(sheet_name);
+                tableSheet = (XSSFSheet)workbook.GetSheet(sheet_name);
                 //file_stream.Close();
 
             }
-            if (table_sheet == null)
+            if (tableSheet == null)
             {
                 MessageBox.Show("table is null");
             }
@@ -78,7 +80,7 @@ namespace Manufactory
             //Тут будет основной говнокод)))
             //...
             int i = 5;
-            var table_row = table_sheet.GetRow(i);
+            var table_row = tableSheet.GetRow(i);
 
             //Ищет незаполненную строку
             //TODO: Может быть, что row будет null, нужно тогда его создавать
@@ -90,7 +92,7 @@ namespace Manufactory
                     break;
                 //MessageBox.Show(table_row.GetCell(0).ToString() + ": " + table_row.GetCell(0).CellType);
                 i++;
-                table_row = table_sheet.GetRow(i);
+                table_row = tableSheet.GetRow(i);
                 
             }
 
@@ -111,7 +113,7 @@ namespace Manufactory
             //Сохранение
             if(success==true)
                 //TODO: Если поставить FileMode.Open, файл не отрывается
-                using (var fileStream=new FileStream(table_path,FileMode.Create,FileAccess.Write))
+                using (var fileStream=new FileStream(workbookPath,FileMode.Create,FileAccess.Write))
             {
 
                     workbook.Write(fileStream);
@@ -127,7 +129,7 @@ namespace Manufactory
             addOrder_button.Enabled = true;
         }
 
-        private bool setRow(int rownum, Dictionary<string,string> order_parametres)
+        private bool setRow(int rownum, Dictionary<string,string> orderParametres)
         {
             bool success = true;
             int product_amount;
@@ -136,9 +138,9 @@ namespace Manufactory
             {
                 //TODO: Ловить также случаи, когда стоимость переполнена(цена*количество)
 
-                product_amount = Convert.ToInt32(order_parametres["product amount"]);
+                product_amount = Convert.ToInt32(orderParametres["product amount"]);
                 //TODO: Разобраться с форматом ввода "," и "."
-                product_cost = Convert.ToDouble(order_parametres["product cost"]);
+                product_cost = Convert.ToDouble(orderParametres["product cost"]);
             }
             catch(System.FormatException e)
             {
@@ -152,25 +154,34 @@ namespace Manufactory
             }
 
             //table_sheet.GetRow(rownum).RowStyle = table_sheet.GetRow(rownum - 1).RowStyle;
-            table_sheet.GetRow(rownum).CreateCell(0).SetCellValue(order_parametres["client"]);
-            table_sheet.GetRow(rownum).CreateCell(1).SetCellValue(order_parametres["product name"]);
-            table_sheet.GetRow(rownum).CreateCell(2).SetCellValue(product_amount);
-            table_sheet.GetRow(rownum).CreateCell(3).SetCellValue(order_parametres["product type"]);
-            table_sheet.GetRow(rownum).CreateCell(4).SetCellValue(order_parametres["product size"]);
-            table_sheet.GetRow(rownum).CreateCell(5).SetCellValue(product_cost);
-
-            table_sheet.GetRow(rownum).GetCell(0).CellStyle.IsLocked = false;
-            table_sheet.GetRow(rownum).GetCell(1).CellStyle.IsLocked = false;
-            table_sheet.GetRow(rownum).GetCell(2).CellStyle.IsLocked = false;
-            table_sheet.GetRow(rownum).GetCell(3).CellStyle.IsLocked = false;
-            table_sheet.GetRow(rownum).GetCell(4).CellStyle.IsLocked = false;
-            table_sheet.GetRow(rownum).GetCell(5).CellStyle.IsLocked = false;
+            //TODO: Стоит добавить setCellValue() ячейкам
+            tableSheet.GetRow(rownum).CreateCell(0).SetCellValue(orderParametres["client"]);
+            tableSheet.GetRow(rownum).CreateCell(1).SetCellValue(orderParametres["product name"]);
+            tableSheet.GetRow(rownum).CreateCell(2).SetCellValue(product_amount);
+            tableSheet.GetRow(rownum).CreateCell(3).SetCellValue(orderParametres["product type"]);
+            tableSheet.GetRow(rownum).CreateCell(4).SetCellValue(orderParametres["product size"]);
+            tableSheet.GetRow(rownum).CreateCell(5).SetCellValue(product_cost);
 
 
+            tableSheet.GetRow(rownum).GetCell(0).CellStyle.IsLocked = false;
+            tableSheet.GetRow(rownum).GetCell(1).CellStyle.IsLocked = false;
+            tableSheet.GetRow(rownum).GetCell(2).CellStyle.IsLocked = false;
+            tableSheet.GetRow(rownum).GetCell(3).CellStyle.IsLocked = false;
+            tableSheet.GetRow(rownum).GetCell(4).CellStyle.IsLocked = false;
+            tableSheet.GetRow(rownum).GetCell(5).CellStyle.IsLocked = false;
+
+            this.mainForm.addRowToActualDataGridView(orderParametres);
 
 
             return success;
 
+        }
+        /// <summary>
+        /// Применяется при нажатии на крестик
+        /// </summary>
+        private void enableMainForm(object sender,FormClosedEventArgs e)
+        {
+            this.mainForm.Enabled = true;
         }
         private void label1_Click(object sender, EventArgs e)
         {

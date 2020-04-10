@@ -1,6 +1,6 @@
 ﻿namespace Manufactory
 {
-    partial class Form1
+    partial class AddOrderForm
     {
         /// <summary>
         /// Required designer variable.
