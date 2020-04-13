@@ -88,9 +88,9 @@
             // textBox3
             // 
             this.productAmount_textBox.Location = new System.Drawing.Point(93, 172);
-            this.productAmount_textBox.Name = "textBox3";
+            this.productAmount_textBox.Name = "3 поле";
             this.productAmount_textBox.Size = new System.Drawing.Size(271, 20);
-            this.productAmount_textBox.TabIndex = 6;
+            this.productAmount_textBox.TabIndex = 10;
             // 
             // label5
             // 
@@ -108,30 +108,30 @@
             this.label6.Location = new System.Drawing.Point(58, 266);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 13);
-            this.label6.TabIndex = 8;
+            this.label6.TabIndex = 6;
             this.label6.Text = "Вид ";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // textBox4
             // 
             this.productType_textBox.Location = new System.Drawing.Point(93, 263);
-            this.productType_textBox.Name = "textBox4";
+            this.productType_textBox.Name = "4 поле";
             this.productType_textBox.Size = new System.Drawing.Size(271, 20);
-            this.productType_textBox.TabIndex = 9;
+            this.productType_textBox.TabIndex = 11;
             // 
             // textBox5
             // 
             this.productName_textBox.Location = new System.Drawing.Point(93, 124);
-            this.productName_textBox.Name = "textBox5";
+            this.productName_textBox.Name = "2 поле";
             this.productName_textBox.Size = new System.Drawing.Size(271, 20);
-            this.productName_textBox.TabIndex = 10;
+            this.productName_textBox.TabIndex = 9;
             // 
             // textBox1
             // 
             this.client_textBox.Location = new System.Drawing.Point(93, 41);
-            this.client_textBox.Name = "textBox1";
+            this.client_textBox.Name = "1 поле";
             this.client_textBox.Size = new System.Drawing.Size(271, 20);
-            this.client_textBox.TabIndex = 11;
+            this.client_textBox.TabIndex = 8;
             // 
             // label7
             // 
@@ -139,15 +139,15 @@
             this.label7.Location = new System.Drawing.Point(33, 316);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 13);
-            this.label7.TabIndex = 12;
+            this.label7.TabIndex = 15;
             this.label7.Text = "Размеры";
             // 
             // textBox2
             // 
             this.productSize_textBox.Location = new System.Drawing.Point(93, 316);
-            this.productSize_textBox.Name = "textBox2";
+            this.productSize_textBox.Name = "5 поле";
             this.productSize_textBox.Size = new System.Drawing.Size(271, 20);
-            this.productSize_textBox.TabIndex = 13;
+            this.productSize_textBox.TabIndex = 12;
             // 
             // label8
             // 
@@ -155,22 +155,22 @@
             this.label8.Location = new System.Drawing.Point(25, 367);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 13);
-            this.label8.TabIndex = 14;
+            this.label8.TabIndex = 16;
             this.label8.Text = "Стоимость";
             // 
             // textBox6
             // 
             this.productCost_textBox.Location = new System.Drawing.Point(93, 367);
-            this.productCost_textBox.Name = "textBox6";
+            this.productCost_textBox.Name = "6 поле";
             this.productCost_textBox.Size = new System.Drawing.Size(271, 20);
-            this.productCost_textBox.TabIndex = 15;
+            this.productCost_textBox.TabIndex = 13;
             // 
             // button1
             // 
             this.addOrder_button.Location = new System.Drawing.Point(29, 419);
             this.addOrder_button.Name = "button1";
             this.addOrder_button.Size = new System.Drawing.Size(334, 52);
-            this.addOrder_button.TabIndex = 16;
+            this.addOrder_button.TabIndex = 14;
             this.addOrder_button.Text = "Добавить";
             this.addOrder_button.UseVisualStyleBackColor = true;
             // 
