@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Manufactory
 {
-    public partial class Form1 : Form
+    public partial class ADDNEW : Form
     {
-        public Form1()
+        public ADDNEW()
         {
             InitializeComponent();
         }
