@@ -86,9 +86,10 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox8
@@ -581,13 +582,6 @@
             this.textBox25.Size = new System.Drawing.Size(100, 20);
             this.textBox25.TabIndex = 87;
             // 
-            // textBox26
-            // 
-            this.textBox26.Location = new System.Drawing.Point(66, 469);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(100, 20);
-            this.textBox26.TabIndex = 88;
-            // 
             // label32
             // 
             this.label32.AutoSize = true;
@@ -596,15 +590,34 @@
             this.label32.Size = new System.Drawing.Size(37, 13);
             this.label32.TabIndex = 89;
             this.label32.Text = "Всего";
+            this.label32.Click += new System.EventHandler(this.label32_Click);
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(5, 472);
+            this.label33.Location = new System.Drawing.Point(16, 449);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(55, 13);
+            this.label33.Size = new System.Drawing.Size(160, 13);
             this.label33.TabIndex = 90;
-            this.label33.Text = "Получено";
+            this.label33.Text = "колв детлей*стоимость одной";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(21, 489);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(84, 13);
+            this.label34.TabIndex = 91;
+            this.label34.Text = "цена за деталь";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(25, 526);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(86, 13);
+            this.label35.TabIndex = 92;
+            this.label35.Text = "цена за партию";
             // 
             // NewCardOrder
             // 
@@ -612,9 +625,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1023, 662);
+            this.Controls.Add(this.label35);
+            this.Controls.Add(this.label34);
             this.Controls.Add(this.label33);
             this.Controls.Add(this.label32);
-            this.Controls.Add(this.textBox26);
             this.Controls.Add(this.textBox25);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.textBox17);
@@ -740,8 +754,9 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.TextBox textBox26;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
     }
 }
