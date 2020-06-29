@@ -1,4 +1,7 @@
-﻿using System;
+﻿using NPOI.SS.Formula.Functions;
+using NPOI.SS.UserModel;
+using NPOI.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,39 +12,44 @@ namespace Manufactory.Additional
     /// <summary>
     /// Данные определённого заголовкаы
     /// </summary>
-    /// <typeparam name="T">Тип поля data</typeparam>
-    class HeadingData<T>
+    class HeadingData
     {
         /// <summary>
         /// Данные для этой ячейки
         /// </summary>
-        private T data;
+        private string data;
         /// <summary>
-        /// Порядковый номер заголовка в таблице
+        /// Порядковый номер заголовка в таблице (начинается с 0)
         /// </summary>
         private int indexNumber;
+        /// <summary>
+        /// Тип данных ячейки
+        /// </summary>
+        private CellType dataType;
 
-
-        public HeadingData()
+        public HeadingData(int indexNumber, CellType dataType, string data)
         {
-
+            this.indexNumber = indexNumber;
+            this.data = data;
+            this.dataType = dataType;
         }
 
         /// <summary>
-        /// Возвращает данные, соответствующие ячейке
-        /// </summary>
-        /// <returns>Данные типа T</returns>
-        public T getData()
+        /// Возвращает данные, соответствующие ячейке, в соответсвие с типом данных
+        /// </summary
+        public void writeData(IRow row)//TODO: Проверить, как работает
         {
-            return data;
+            switch (this.dataType) //Всего у CellType 7 типов
+            {
+                case NPOI.SS.UserModel.CellType.Numeric:
+                    row.GetCell(indexNumber).SetCellValue(Convert.ToDouble(data));
+                    break;
+                case NPOI.SS.UserModel.CellType.String:
+                    row.GetCell(indexNumber).SetCellValue(data);
+                    break;
+            }
+           
         }
         
-        //TODO: разобраться с тем, почему появляется ошибка в методе (пока проверку типа можно делать посредством "data is ...(Указанный тип данных, к примеру String) ")
-        /*
-        public Type getDataType()
-        {
-            this.data.GetType();
-        }
-        */
     }
 }

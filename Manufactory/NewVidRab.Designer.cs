@@ -46,7 +46,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.AddVidRab = new System.Windows.Forms.Button();
+            this.addVidRabButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox8
@@ -200,21 +200,22 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Подготовительные работы";
             // 
-            // AddVidRab
+            // addVidRabButton
             // 
-            this.AddVidRab.Location = new System.Drawing.Point(43, 473);
-            this.AddVidRab.Name = "AddVidRab";
-            this.AddVidRab.Size = new System.Drawing.Size(313, 36);
-            this.AddVidRab.TabIndex = 36;
-            this.AddVidRab.Text = "Добавить";
-            this.AddVidRab.UseVisualStyleBackColor = true;
+            this.addVidRabButton.Location = new System.Drawing.Point(43, 473);
+            this.addVidRabButton.Name = "addVidRabButton";
+            this.addVidRabButton.Size = new System.Drawing.Size(313, 36);
+            this.addVidRabButton.TabIndex = 36;
+            this.addVidRabButton.Text = "Готово";
+            this.addVidRabButton.UseVisualStyleBackColor = true;
+            this.addVidRabButton.Click += new System.EventHandler(this.hideForm);
             // 
             // NewVidRab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 530);
-            this.Controls.Add(this.AddVidRab);
+            this.Controls.Add(this.addVidRabButton);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
@@ -260,6 +261,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button AddVidRab;
+        private System.Windows.Forms.Button addVidRabButton;
     }
 }

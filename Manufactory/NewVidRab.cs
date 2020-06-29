@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,15 +18,13 @@ namespace Manufactory
         {
             this.parentForm = parentForm;
             InitializeComponent();
-            this.FormClosed += new FormClosedEventHandler(this.enableParentForm);
+            this.ControlBox = false;
         }
 
-        /// <summary>
-        /// Применяется при нажатии на крестик
-        /// </summary>
-        private void enableParentForm(object sender, FormClosedEventArgs e)
+        private void hideForm(object sender, EventArgs e)
         {
             this.parentForm.Enabled = true;
+            this.Hide();
         }
     }
 }

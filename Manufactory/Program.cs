@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Manufactory.Additional;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +9,15 @@ namespace Manufactory
 {
     static class Program
     {
+        static Dictionary<string, int> headings;
+        /// <summary>
+        /// Ставит в соответствие заголовки и номер строки
+        /// </summary>
+        static void setHeadings()
+        {
+
+        }
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,7 +27,8 @@ namespace Manufactory
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new MainForm("Таблица заказов.xlsx", "Входящие"));
-            Application.Run(new NewAdd());
+            Values values = new Values("Таблица заказов.xlsx", "Входящие");
+            Application.Run(new NewAdd("Таблица заказов.xlsx", "Входящие",headings));
         }
     }
 }

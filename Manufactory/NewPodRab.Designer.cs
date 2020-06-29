@@ -46,7 +46,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.AddPodRab = new System.Windows.Forms.Button();
+            this.addPodrabButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -201,21 +201,22 @@
             this.textBox8.Size = new System.Drawing.Size(100, 20);
             this.textBox8.TabIndex = 17;
             // 
-            // AddPodRab
+            // addPodrabButton
             // 
-            this.AddPodRab.Location = new System.Drawing.Point(30, 435);
-            this.AddPodRab.Name = "AddPodRab";
-            this.AddPodRab.Size = new System.Drawing.Size(314, 27);
-            this.AddPodRab.TabIndex = 18;
-            this.AddPodRab.Text = "Добавить";
-            this.AddPodRab.UseVisualStyleBackColor = true;
+            this.addPodrabButton.Location = new System.Drawing.Point(30, 435);
+            this.addPodrabButton.Name = "addPodrabButton";
+            this.addPodrabButton.Size = new System.Drawing.Size(314, 27);
+            this.addPodrabButton.TabIndex = 18;
+            this.addPodrabButton.Text = "Готово";
+            this.addPodrabButton.UseVisualStyleBackColor = true;
+            this.addPodrabButton.Click += new System.EventHandler(this.hideForm);
             // 
             // NewPodRab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(367, 477);
-            this.Controls.Add(this.AddPodRab);
+            this.Controls.Add(this.addPodrabButton);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
@@ -262,6 +263,6 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Button AddPodRab;
+        private System.Windows.Forms.Button addPodrabButton;
     }
 }

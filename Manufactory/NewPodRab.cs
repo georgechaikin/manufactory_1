@@ -15,8 +15,8 @@ namespace Manufactory
         Form parentForm;
         public NewPodRab(Form parentForm)
         {
+            this.ControlBox = false;
             this.parentForm = parentForm;
-            this.FormClosed += new FormClosedEventHandler(this.enableParentForm);
             InitializeComponent();
         }
 
@@ -29,12 +29,11 @@ namespace Manufactory
         {
 
         }
-        /// <summary>
-        /// Применяется при нажатии на крестик
-        /// </summary>
-        private void enableParentForm(object sender, FormClosedEventArgs e)
+
+        private void hideForm(object sender, EventArgs e)
         {
             this.parentForm.Enabled = true;
+            this.Hide();
         }
     }
 }

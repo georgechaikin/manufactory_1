@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Manufactory.Additional;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,15 @@ namespace Manufactory
 {
     public partial class NewAdd : Form
     {
-        public NewAdd()
+        private string path;
+        private string tableName;
+        private NewVidRab vidRab;
+        private NewPodRab podRab;
+        private Dictionary<string, int> headings;
+        public NewAdd(string path, string tableName,Dictionary<string,int> headings)
         {
+            this.vidRab = new NewVidRab(this);
+            this.podRab = new NewPodRab(this);
             InitializeComponent();
         }
 
@@ -26,21 +34,37 @@ namespace Manufactory
         {
 
         }
-
+        /// <summary>
+        /// Открывает окно для доп. информации (Подготовительные работы)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void openPodRab(object sender, EventArgs e)//TODO: Узнать, удаляет ли GC Формы после нажатия на крестик
         {
-            NewPodRab podRab = new NewPodRab(this);
             this.Enabled = false;
             podRab.Show();
         }
-
+       /// <summary>
+       /// Открывает окно для доп. информации (Вид работ)
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void openVidRab(object sender, EventArgs e)//TODO: Узнать, удаляет ли GC Формы после нажатия на крестик
         {
             {
-                NewVidRab vidRab = new NewVidRab(this);
                 this.Enabled = false;
                 vidRab.Show();
             }
+        }
+
+        /// <summary>
+        /// Добавляет заказ в таблицу
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void addOrder(object sender, EventArgs e)
+        {
+
         }
     }
 }

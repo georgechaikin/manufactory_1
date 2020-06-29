@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Additional\HeadingData.cs" />
     <Compile Include="AddOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +112,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Additional\Values.cs" />
     <EmbeddedResource Include="AddOrderForm.resx">
       <DependentUpon>AddOrderForm.cs</DependentUpon>
     </EmbeddedResource>

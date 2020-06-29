@@ -207,7 +207,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(92, 26);
             this.button2.TabIndex = 16;
-            this.button2.Text = "Добавить";
+            this.button2.Text = "Редактировать";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.openPodRab);
             // 
@@ -217,7 +217,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(92, 26);
             this.button3.TabIndex = 17;
-            this.button3.Text = "Добавить";
+            this.button3.Text = "Редактировать";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.openVidRab);
             // 
@@ -229,6 +229,7 @@
             this.AddOrderBut.TabIndex = 18;
             this.AddOrderBut.Text = "Добавить";
             this.AddOrderBut.UseVisualStyleBackColor = true;
+            this.AddOrderBut.Click += new System.EventHandler(this.addOrder);
             // 
             // textBox1
             // 
