@@ -46,15 +46,15 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.AddOrderBut = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.requestNumberTextBox = new System.Windows.Forms.TextBox();
+            this.clientNameTextBox = new System.Windows.Forms.TextBox();
+            this.productNameTextBox = new System.Windows.Forms.TextBox();
+            this.productNumberTextBox = new System.Windows.Forms.TextBox();
+            this.materialTypeTextBox = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.materialSizeTextBox = new System.Windows.Forms.TextBox();
+            this.materialCostTextBox = new System.Windows.Forms.TextBox();
+            this.productTextBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -231,40 +231,40 @@
             this.AddOrderBut.UseVisualStyleBackColor = true;
             this.AddOrderBut.Click += new System.EventHandler(this.addOrder);
             // 
-            // textBox1
+            // requestNumberTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(103, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 19;
+            this.requestNumberTextBox.Location = new System.Drawing.Point(103, 56);
+            this.requestNumberTextBox.Name = "requestNumberTextBox";
+            this.requestNumberTextBox.Size = new System.Drawing.Size(100, 20);
+            this.requestNumberTextBox.TabIndex = 19;
             // 
-            // textBox2
+            // clientNameTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(103, 91);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 20;
+            this.clientNameTextBox.Location = new System.Drawing.Point(103, 91);
+            this.clientNameTextBox.Name = "Заказчик";
+            this.clientNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.clientNameTextBox.TabIndex = 20;
             // 
-            // textBox3
+            // productNameTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(103, 199);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 21;
+            this.productNameTextBox.Location = new System.Drawing.Point(103, 199);
+            this.productNameTextBox.Name = "Изделие/Наименование";
+            this.productNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.productNameTextBox.TabIndex = 21;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(103, 231);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 22;
+            this.productNumberTextBox.Location = new System.Drawing.Point(103, 231);
+            this.productNumberTextBox.Name = "Изделие/Кол-во";
+            this.productNumberTextBox.Size = new System.Drawing.Size(100, 20);
+            this.productNumberTextBox.TabIndex = 22;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(103, 339);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 23;
+            this.materialTypeTextBox.Location = new System.Drawing.Point(103, 339);
+            this.materialTypeTextBox.Name = "Материал/Вид";
+            this.materialTypeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.materialTypeTextBox.TabIndex = 23;
             // 
             // textBox6
             // 
@@ -275,28 +275,28 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(103, 413);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 25;
+            this.materialSizeTextBox.Location = new System.Drawing.Point(103, 413);
+            this.materialSizeTextBox.Name = "textBox7";
+            this.materialSizeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.materialSizeTextBox.TabIndex = 25;
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(103, 445);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 26;
+            this.materialCostTextBox.Location = new System.Drawing.Point(103, 445);
+            this.materialCostTextBox.Name = "Материал/Стоимость";
+            this.materialCostTextBox.Size = new System.Drawing.Size(100, 20);
+            this.materialCostTextBox.TabIndex = 26;
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.productTextBox.FormattingEnabled = true;
+            this.productTextBox.Items.AddRange(new string[] {
             "Изделие",
             "Комплексный заказ"});
-            this.comboBox1.Location = new System.Drawing.Point(22, 168);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 12;
+            this.productTextBox.Location = new System.Drawing.Point(22, 168);
+            this.productTextBox.Name = "Изделие";
+            this.productTextBox.Size = new System.Drawing.Size(121, 21);
+            this.productTextBox.TabIndex = 12;
             // 
             // NewAdd
             // 
@@ -304,21 +304,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(466, 621);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.materialCostTextBox);
+            this.Controls.Add(this.materialSizeTextBox);
             this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.materialTypeTextBox);
+            this.Controls.Add(this.productNumberTextBox);
+            this.Controls.Add(this.productNameTextBox);
+            this.Controls.Add(this.clientNameTextBox);
+            this.Controls.Add(this.requestNumberTextBox);
             this.Controls.Add(this.AddOrderBut);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.productTextBox);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -359,14 +359,14 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button AddOrderBut;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox requestNumberTextBox;
+        private System.Windows.Forms.TextBox clientNameTextBox;
+        private System.Windows.Forms.TextBox productNameTextBox;
+        private System.Windows.Forms.TextBox productNumberTextBox;
+        private System.Windows.Forms.TextBox materialTypeTextBox;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox materialSizeTextBox;
+        private System.Windows.Forms.TextBox materialCostTextBox;
+        private System.Windows.Forms.ComboBox productTextBox;
     }
 }

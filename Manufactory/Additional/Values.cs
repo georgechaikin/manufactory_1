@@ -36,6 +36,7 @@ namespace Manufactory.Additional
             path = tablePath;
             tableName = TableNAme;
             headings = new Dictionary<string, int>();
+
             //Пока headings будет заполняться вручную
             headings["Заказчик"] = 0;
             headings["Изделие/Наименование"] = 1;
@@ -43,7 +44,26 @@ namespace Manufactory.Additional
             headings["Материал/Вид"] = 3;
             headings["Материал/Размеры"] = 4;
             headings["Материал/Стоимость"] = 5;
-            headings["Материал/Стоимость"] = 6;
+            headings["Под.работы/Фрезеровка/Время"] = 6;
+            headings["Под.работы/Фрезеровка/Стоимость"] = 7;
+            headings["Под.работы/Товарка/Время"] = 8;
+            headings["Под.работы/Товарка/Стоимость"] = 9;
+            headings["Под.работы/Слесарка/Время"] = 10;
+            headings["Под.работы/Слесарка/Стоимость"] = 11;
+            headings["Под.работы/Сварка/Время"] = 12;
+            headings["Под.работы/Сварка/Стоимость"] = 13;
+            headings["Врезерование/Время"] = 14;
+            headings["Врезерование/Стоимость"] = 15;
+            headings["Токарные работы/Время"] = 16;
+            headings["Токарные работы/Стоимость"] = 17;
+            headings["Слесарная обработка/Время"] = 18;
+            headings["Слесарная обработка/Стоимость"] = 19;
+            headings["Сварочная работа/Время"] = 20;
+            headings["Сварочная работа/Стоимость"] = 21;
+
+
+
+
             loadTable();
 
         }
@@ -74,8 +94,7 @@ namespace Manufactory.Additional
                 MessageBox.Show("table is null");
             }
             #endregion
-
-            #region Задаем номер строки (startrow), с которого будем начинать заполнение
+            #region Ищем номер строки (startrow), с которого будем начинать заполнение
             var startRow = tableSheet.GetRow(startrow);
 
             //TODO: Может быть, что row будет null, нужно тогда его создавать
@@ -91,11 +110,10 @@ namespace Manufactory.Additional
 
             }
             #endregion
-
             MessageBox.Show("Номер последней строки: " + startrow);
         }
-        
-        
+
+
         /*
         private void add_data(object sender, EventArgs e)
         {

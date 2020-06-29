@@ -23,6 +23,10 @@ namespace Manufactory
             this.vidRab = new NewVidRab(this);
             this.podRab = new NewPodRab(this);
             InitializeComponent();
+            foreach(Control x in this.Controls)
+            {
+                MessageBox.Show(x.Name);
+            }
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
