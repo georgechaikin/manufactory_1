@@ -12,9 +12,20 @@ namespace Manufactory
 {
     public partial class NewVidRab : Form
     {
-        public NewVidRab()
+        Form parentForm;
+        public NewVidRab(Form parentForm)
         {
+            this.parentForm = parentForm;
             InitializeComponent();
+            this.FormClosed += new FormClosedEventHandler(this.enableParentForm);
+        }
+
+        /// <summary>
+        /// Применяется при нажатии на крестик
+        /// </summary>
+        private void enableParentForm(object sender, FormClosedEventArgs e)
+        {
+            this.parentForm.Enabled = true;
         }
     }
 }

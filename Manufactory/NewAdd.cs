@@ -26,5 +26,21 @@ namespace Manufactory
         {
 
         }
+
+        private void openPodRab(object sender, EventArgs e)//TODO: Узнать, удаляет ли GC Формы после нажатия на крестик
+        {
+            NewPodRab podRab = new NewPodRab(this);
+            this.Enabled = false;
+            podRab.Show();
+        }
+
+        private void openVidRab(object sender, EventArgs e)//TODO: Узнать, удаляет ли GC Формы после нажатия на крестик
+        {
+            {
+                NewVidRab vidRab = new NewVidRab(this);
+                this.Enabled = false;
+                vidRab.Show();
+            }
+        }
     }
 }
