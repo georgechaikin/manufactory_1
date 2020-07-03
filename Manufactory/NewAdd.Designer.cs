@@ -43,9 +43,9 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.AddOrderBut = new System.Windows.Forms.Button();
+            this.podRabButton = new System.Windows.Forms.Button();
+            this.vidRabButton = new System.Windows.Forms.Button();
+            this.addOrderButtton = new System.Windows.Forms.Button();
             this.requestNumberTextBox = new System.Windows.Forms.TextBox();
             this.clientNameTextBox = new System.Windows.Forms.TextBox();
             this.productNameTextBox = new System.Windows.Forms.TextBox();
@@ -201,35 +201,35 @@
             this.label13.TabIndex = 15;
             this.label13.Text = "Добавление заказа";
             // 
-            // button2
+            // podRabButton
             // 
-            this.button2.Location = new System.Drawing.Point(202, 483);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 26);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Редактировать";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.openPodRab);
+            this.podRabButton.Location = new System.Drawing.Point(202, 483);
+            this.podRabButton.Name = "button2";
+            this.podRabButton.Size = new System.Drawing.Size(92, 26);
+            this.podRabButton.TabIndex = 16;
+            this.podRabButton.Text = "Редактировать";
+            this.podRabButton.UseVisualStyleBackColor = true;
+            this.podRabButton.Click += new System.EventHandler(this.openPodRab);
             // 
-            // button3
+            // vidRabButton
             // 
-            this.button3.Location = new System.Drawing.Point(202, 529);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(92, 26);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Редактировать";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.openVidRab);
+            this.vidRabButton.Location = new System.Drawing.Point(202, 529);
+            this.vidRabButton.Name = "button3";
+            this.vidRabButton.Size = new System.Drawing.Size(92, 26);
+            this.vidRabButton.TabIndex = 17;
+            this.vidRabButton.Text = "Редактировать";
+            this.vidRabButton.UseVisualStyleBackColor = true;
+            this.vidRabButton.Click += new System.EventHandler(this.openVidRab);
             // 
-            // AddOrderBut
+            // addOrderButtton
             // 
-            this.AddOrderBut.Location = new System.Drawing.Point(12, 574);
-            this.AddOrderBut.Name = "AddOrderBut";
-            this.AddOrderBut.Size = new System.Drawing.Size(383, 35);
-            this.AddOrderBut.TabIndex = 18;
-            this.AddOrderBut.Text = "Добавить";
-            this.AddOrderBut.UseVisualStyleBackColor = true;
-            this.AddOrderBut.Click += new System.EventHandler(this.addOrder);
+            this.addOrderButtton.Location = new System.Drawing.Point(12, 574);
+            this.addOrderButtton.Name = "AddOrderBut";
+            this.addOrderButtton.Size = new System.Drawing.Size(383, 35);
+            this.addOrderButtton.TabIndex = 18;
+            this.addOrderButtton.Text = "Добавить";
+            this.addOrderButtton.UseVisualStyleBackColor = true;
+            this.addOrderButtton.Click += new System.EventHandler(this.addOrder);
             // 
             // requestNumberTextBox
             // 
@@ -252,14 +252,14 @@
             this.productNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.productNameTextBox.TabIndex = 21;
             // 
-            // textBox4
+            // productNumberTextBox
             // 
             this.productNumberTextBox.Location = new System.Drawing.Point(103, 231);
             this.productNumberTextBox.Name = "Изделие/Кол-во";
             this.productNumberTextBox.Size = new System.Drawing.Size(100, 20);
             this.productNumberTextBox.TabIndex = 22;
             // 
-            // textBox5
+            // texmaterialTypeTextBoxtBox5
             // 
             this.materialTypeTextBox.Location = new System.Drawing.Point(103, 339);
             this.materialTypeTextBox.Name = "Материал/Вид";
@@ -273,21 +273,21 @@
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 24;
             // 
-            // textBox7
+            // materialSizeTextBox
             // 
             this.materialSizeTextBox.Location = new System.Drawing.Point(103, 413);
-            this.materialSizeTextBox.Name = "textBox7";
+            this.materialSizeTextBox.Name = "Материал/Размеры";
             this.materialSizeTextBox.Size = new System.Drawing.Size(100, 20);
             this.materialSizeTextBox.TabIndex = 25;
             // 
-            // textBox8
+            // materialCostTextBox
             // 
             this.materialCostTextBox.Location = new System.Drawing.Point(103, 445);
             this.materialCostTextBox.Name = "Материал/Стоимость";
             this.materialCostTextBox.Size = new System.Drawing.Size(100, 20);
             this.materialCostTextBox.TabIndex = 26;
             // 
-            // comboBox1
+            // productTextBox
             // 
             this.productTextBox.FormattingEnabled = true;
             this.productTextBox.Items.AddRange(new string[] {
@@ -312,9 +312,9 @@
             this.Controls.Add(this.productNameTextBox);
             this.Controls.Add(this.clientNameTextBox);
             this.Controls.Add(this.requestNumberTextBox);
-            this.Controls.Add(this.AddOrderBut);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.addOrderButtton);
+            this.Controls.Add(this.vidRabButton);
+            this.Controls.Add(this.podRabButton);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox2);
@@ -356,9 +356,9 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button AddOrderBut;
+        private System.Windows.Forms.Button podRabButton;
+        private System.Windows.Forms.Button vidRabButton;
+        private System.Windows.Forms.Button addOrderButtton;
         private System.Windows.Forms.TextBox requestNumberTextBox;
         private System.Windows.Forms.TextBox clientNameTextBox;
         private System.Windows.Forms.TextBox productNameTextBox;

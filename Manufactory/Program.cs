@@ -20,7 +20,7 @@ namespace Manufactory
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new MainForm("Таблица заказов.xlsx", "Входящие"));
             Values values = new Values("Таблица заказов.xlsx", "Входящие");
-            Application.Run(new NewAdd("Таблица заказов.xlsx", "Входящие"));
+            Application.Run(new NewAdd());
         }
     }
 }

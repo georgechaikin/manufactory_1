@@ -75,6 +75,7 @@ namespace Manufactory.Additional
             numericHeadings["Сварочная работа/Время"] = 20;
             numericHeadings["Сварочная работа/Стоимость"] = 21;
 
+            
             loadTable();
 
         }
