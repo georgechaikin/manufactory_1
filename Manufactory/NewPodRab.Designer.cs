@@ -38,7 +38,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.millingTimeTextBox = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -147,57 +147,57 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(75, 121);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 10;
+            this.millingTimeTextBox.Location = new System.Drawing.Point(75, 121);
+            this.millingTimeTextBox.Name = "Под.работы/Фрезеровка/Время";
+            this.millingTimeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.millingTimeTextBox.TabIndex = 10;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(75, 212);
-            this.textBox2.Name = "textBox2";
+            this.textBox2.Name = "Под.работы/Товарка/Время";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 11;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(75, 304);
-            this.textBox3.Name = "textBox3";
+            this.textBox3.Name = "Под.работы/Слесарка/Время";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 12;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(75, 399);
-            this.textBox4.Name = "textBox4";
+            this.textBox4.Name = "Под.работы/Сварка/Время";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 13;
             // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(245, 121);
-            this.textBox5.Name = "textBox5";
+            this.textBox5.Name = "Под.работы/Фрезеровка/Стоимость";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 14;
             // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(245, 212);
-            this.textBox6.Name = "textBox6";
+            this.textBox6.Name = "Под.работы/Товарка/Стоимость";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 15;
             // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(245, 304);
-            this.textBox7.Name = "textBox7";
+            this.textBox7.Name = "Под.работы/Слесарка/Стоимость";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 16;
             // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(245, 399);
-            this.textBox8.Name = "textBox8";
+            this.textBox8.Name = "Под.работы/Сварка/Стоимость";
             this.textBox8.Size = new System.Drawing.Size(100, 20);
             this.textBox8.TabIndex = 17;
             // 
@@ -224,7 +224,7 @@
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.millingTimeTextBox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -255,7 +255,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox millingTimeTextBox;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;

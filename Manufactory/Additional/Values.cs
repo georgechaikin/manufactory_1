@@ -1,4 +1,5 @@
 ﻿using NPOI.SS.Formula.Functions;
+using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,14 @@ namespace Manufactory.Additional
         /// Заголовки и соответствующие им номера в строке таблицы
         /// </summary>
         public static Dictionary<string, int> headings; //TODO: Сделать автоматическое заполнение
+        /// <summary>
+        /// Заголовки и соответствующие им номера в строке таблицы
+        /// </summary>
+        public static Dictionary<string, int> numericHeadings;
+        /// <summary>
+        /// Заголовки и соответствующие им номера в строке таблицы
+        /// </summary>
+        public static Dictionary<string, int> stringHeadings;
 
         /// <summary>
         /// Путь до файла
@@ -30,39 +39,41 @@ namespace Manufactory.Additional
         /// </summary>
         public static int startrow;
 
+        public static IWorkbook workbook;
+        public static ISheet tableSheet;
+
         public Values(string tablePath, string TableNAme)
         {
             startrow = 5;//TODO: Потом прописать автоматический поиск стартовой строки
             path = tablePath;
             tableName = TableNAme;
             headings = new Dictionary<string, int>();
+            numericHeadings = new Dictionary<string, int>();
+            stringHeadings = new Dictionary<string, int>();
 
             //Пока headings будет заполняться вручную
-            headings["Заказчик"] = 0;
-            headings["Изделие/Наименование"] = 1;
-            headings["Изделие/Кол-во"] = 2;
-            headings["Материал/Вид"] = 3;
-            headings["Материал/Размеры"] = 4;
-            headings["Материал/Стоимость"] = 5;
-            headings["Под.работы/Фрезеровка/Время"] = 6;
-            headings["Под.работы/Фрезеровка/Стоимость"] = 7;
-            headings["Под.работы/Товарка/Время"] = 8;
-            headings["Под.работы/Товарка/Стоимость"] = 9;
-            headings["Под.работы/Слесарка/Время"] = 10;
-            headings["Под.работы/Слесарка/Стоимость"] = 11;
-            headings["Под.работы/Сварка/Время"] = 12;
-            headings["Под.работы/Сварка/Стоимость"] = 13;
-            headings["Врезерование/Время"] = 14;
-            headings["Врезерование/Стоимость"] = 15;
-            headings["Токарные работы/Время"] = 16;
-            headings["Токарные работы/Стоимость"] = 17;
-            headings["Слесарная обработка/Время"] = 18;
-            headings["Слесарная обработка/Стоимость"] = 19;
-            headings["Сварочная работа/Время"] = 20;
-            headings["Сварочная работа/Стоимость"] = 21;
-
-
-
+            stringHeadings["Заказчик"] = 0;
+            stringHeadings["Изделие/Наименование"] = 1;
+            numericHeadings["Изделие/Кол-во"] = 2;
+            stringHeadings["Материал/Вид"] = 3;
+            stringHeadings["Материал/Размеры"] = 4;
+            numericHeadings["Материал/Стоимость"] = 5;
+            numericHeadings["Под.работы/Фрезеровка/Время"] = 6;
+            numericHeadings["Под.работы/Фрезеровка/Стоимость"] = 7;
+            numericHeadings["Под.работы/Товарка/Время"] = 8;
+            numericHeadings["Под.работы/Товарка/Стоимость"] = 9;
+            numericHeadings["Под.работы/Слесарка/Время"] = 10;
+            numericHeadings["Под.работы/Слесарка/Стоимость"] = 11;
+            numericHeadings["Под.работы/Сварка/Время"] = 12;
+            numericHeadings["Под.работы/Сварка/Стоимость"] = 13;
+            numericHeadings["Фрезерование/Время"] = 14;
+            numericHeadings["Фрезерование/Стоимость"] = 15;
+            numericHeadings["Токарные работы/Время"] = 16;
+            numericHeadings["Токарные работы/Стоимость"] = 17;
+            numericHeadings["Слесарная обработка/Время"] = 18;
+            numericHeadings["Слесарная обработка/Стоимость"] = 19;
+            numericHeadings["Сварочная работа/Время"] = 20;
+            numericHeadings["Сварочная работа/Стоимость"] = 21;
 
             loadTable();
 
@@ -79,9 +90,6 @@ namespace Manufactory.Additional
                 Application.Exit();
                 return;
             }
-
-            XSSFWorkbook workbook;
-            XSSFSheet tableSheet;
 
             using (var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read))
             {

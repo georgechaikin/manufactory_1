@@ -197,5 +197,10 @@ namespace Manufactory
         {
 
         }
+
+        private void addOrder_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
