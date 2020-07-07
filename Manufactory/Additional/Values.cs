@@ -18,11 +18,11 @@ namespace Manufactory.Additional
         /// </summary>
         public static Dictionary<string, int> headings; //TODO: Сделать автоматическое заполнение
         /// <summary>
-        /// Заголовки и соответствующие им номера в строке таблицы
+        /// Заголовки и соответствующие им номера в строке таблицы (числовые значения)
         /// </summary>
         public static Dictionary<string, int> numericHeadings;
         /// <summary>
-        /// Заголовки и соответствующие им номера в строке таблицы
+        /// Заголовки и соответствующие им номера в строке таблицы (строчные значения)
         /// </summary>
         public static Dictionary<string, int> stringHeadings;
 
@@ -38,18 +38,25 @@ namespace Manufactory.Additional
         /// Номер строки, с которой начинается запись(изначально это номер строки после всех заголовков)
         /// </summary>
         public static int startrow;
-
+        /// <summary>
+        /// Excel файл, с которым производится работа
+        /// </summary>
         public static IWorkbook workbook;
+        /// <summary>
+        /// Лист в файле, с которым производится работа
+        /// </summary>
         public static ISheet tableSheet;
 
-        public Values(string tablePath, string TableNAme)
+        public Values(string tablePath, string TableName)
         {
             startrow = 5;//TODO: Потом прописать автоматический поиск стартовой строки
             path = tablePath;
-            tableName = TableNAme;
+            tableName = TableName;
             headings = new Dictionary<string, int>();
             numericHeadings = new Dictionary<string, int>();
             stringHeadings = new Dictionary<string, int>();
+            headings = new Dictionary<string, int>();
+
 
             //Пока headings будет заполняться вручную
             stringHeadings["Заказчик"] = 0;
@@ -75,18 +82,21 @@ namespace Manufactory.Additional
             numericHeadings["Сварочная работа/Время"] = 20;
             numericHeadings["Сварочная работа/Стоимость"] = 21;
 
+            headings = numericHeadings.Union(stringHeadings).ToDictionary(s=>s.Key,s=>s.Value);
             
             loadTable();
 
         }
-
+        /// <summary>
+        /// Загружает таблицу
+        /// </summary>
         private static void loadTable()
         {
             #region Открываем xlsx файл
             if (!File.Exists(path))
             {
-                //Какой-то код
-                //Пока можно не писать
+                //Выходим из приложения, если файла не существует
+                //Потом можно добавить сюда что-нибудь(к примеру логи, исключения и т.п.)
                 MessageBox.Show("Не указан путь");
                 Application.Exit();
                 return;
@@ -122,52 +132,5 @@ namespace Manufactory.Additional
             MessageBox.Show("Номер последней строки: " + startrow);
         }
 
-
-        /*
-        private void add_data(object sender, EventArgs e)
-        {
-            //addOrder_button.Enabled = false;
-            StringBuilder stringBuilder = new StringBuilder();
-
-            #region Проверка на заполненность полей
-            foreach (Control textBox in this.Controls)
-            {
-                if (textBox is TextBox)
-                    if (((TextBox)textBox).Text == null || ((TextBox)textBox).Text.Equals(String.Empty))
-                    {
-                        stringBuilder.Append("\n");
-                        stringBuilder.Append(textBox.Name);
-                    }
-            }
-            //TODO: Не забыть поменять Name у textbox'ов
-            if (stringBuilder.Length != 0)
-            {
-                MessageBox.Show("Следующие поля пусты:" + stringBuilder.ToString());
-                //addOrder_button.Enabled = true;
-                return;
-            }
-            #endregion
-
-            //Тут будет основной говнокод)))
-            //...
-            int i = 5;
-            var table_row = tableSheet.GetRow(i);
-
-            //Ищет незаполненную строку
-            //TODO: Может быть, что row будет null, нужно тогда его создавать
-            while (table_row != null)
-            {
-                if (table_row.GetCell(0) == null)
-                    break;
-                else if (table_row.GetCell(0).ToString().Equals(String.Empty))
-                    break;
-                //MessageBox.Show(table_row.GetCell(0).ToString() + ": " + table_row.GetCell(0).CellType);
-                i++;
-                table_row = tableSheet.GetRow(i);
-
-            }
-
-        }
-        */
     }
 }

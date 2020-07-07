@@ -33,8 +33,8 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.productNameTextBox = new System.Windows.Forms.TextBox();
+            this.clientNameTextBox = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -129,17 +129,17 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(330, 136);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 46;
+            this.productNameTextBox.Location = new System.Drawing.Point(330, 136);
+            this.productNameTextBox.Name = "Изделие/Наименование";
+            this.productNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.productNameTextBox.TabIndex = 46;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(98, 64);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 45;
+            this.clientNameTextBox.Location = new System.Drawing.Point(98, 64);
+            this.clientNameTextBox.Name = "Заказчик";
+            this.clientNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.clientNameTextBox.TabIndex = 45;
             // 
             // textBox1
             // 
@@ -590,7 +590,6 @@
             this.label32.Size = new System.Drawing.Size(37, 13);
             this.label32.TabIndex = 89;
             this.label32.Text = "Всего";
-            this.label32.Click += new System.EventHandler(this.label32_Click);
             // 
             // label33
             // 
@@ -599,7 +598,7 @@
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(160, 13);
             this.label33.TabIndex = 90;
-            this.label33.Text = "колв детлей*стоимость одной";
+            this.label33.Text = "кол- детлей*стоимость одной";
             // 
             // label34
             // 
@@ -670,8 +669,8 @@
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.productNameTextBox);
+            this.Controls.Add(this.clientNameTextBox);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
@@ -701,8 +700,8 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox productNameTextBox;
+        private System.Windows.Forms.TextBox clientNameTextBox;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label12;
