@@ -19,6 +19,19 @@ namespace Manufactory
         private NewPodRab podRab;
         public NewAdd()
         {
+            // 
+            // showCardButton
+            // 
+            System.Windows.Forms.Button showCardButton = new System.Windows.Forms.Button();
+            showCardButton.Location = new System.Drawing.Point(280, 54);
+            showCardButton.Name = "showCardButton";
+            showCardButton.Size = new System.Drawing.Size(125, 32);
+            showCardButton.TabIndex = 27;
+            showCardButton.Text = "Показать заказ";
+            showCardButton.UseVisualStyleBackColor = true;
+            showCardButton.Click += new System.EventHandler(this.showCard);
+            this.Controls.Add(showCardButton);
+
             this.vidRab = new NewVidRab(this);
             this.podRab = new NewPodRab(this);
             InitializeComponent();
@@ -94,8 +107,10 @@ namespace Manufactory
                     {
                         if (((TextBox)x).Text == null || ((TextBox)x).Text.Equals(String.Empty))//TODO: Сделать проверку на наличие ненужных символов и т. п.
                             throw new FormatException();
+
+                        //TODO: Вместо Name лучше использовать AccessibleName, так как при изменении формы через конструктор сбрасываются имена
                         Values.tableSheet.GetRow(Values.startrow).CreateCell(Values.numericHeadings[x.Name]).SetCellValue(Convert.ToDouble(x.Text));
-                        
+
 
                     }
                     catch (FormatException)// Проверяет, записаны ли данные в виде числа
@@ -135,12 +150,23 @@ namespace Manufactory
                             continue;
                         }
                         #endregion
-
                     }
 
                 }
             }
             return success;
+        }
+        /// <summary>
+        /// Показывает информацию по текущему заказу (заполненные и незаполненные поля заказа)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void showCard(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            NewCardOrder cardOrderForm = new NewCardOrder(new Form[] { this, this.vidRab, this.podRab });
+            cardOrderForm.Show();
+
         }
     }
 

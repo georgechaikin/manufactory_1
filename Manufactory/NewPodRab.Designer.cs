@@ -155,7 +155,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(75, 212);
-            this.textBox2.Name = "Под.работы/Товарка/Время";
+            this.textBox2.Name = "Под.работы/Токарка/Время";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 11;
             // 
@@ -183,7 +183,7 @@
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(245, 212);
-            this.textBox6.Name = "Под.работы/Товарка/Стоимость";
+            this.textBox6.Name = "Под.работы/Токарка/Стоимость";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 15;
             // 

@@ -67,8 +67,8 @@ namespace Manufactory.Additional
             numericHeadings["Материал/Стоимость"] = 5;
             numericHeadings["Под.работы/Фрезеровка/Время"] = 6;
             numericHeadings["Под.работы/Фрезеровка/Стоимость"] = 7;
-            numericHeadings["Под.работы/Товарка/Время"] = 8;
-            numericHeadings["Под.работы/Товарка/Стоимость"] = 9;
+            numericHeadings["Под.работы/Токарка/Время"] = 8;
+            numericHeadings["Под.работы/Токарка/Стоимость"] = 9;
             numericHeadings["Под.работы/Слесарка/Время"] = 10;
             numericHeadings["Под.работы/Слесарка/Стоимость"] = 11;
             numericHeadings["Под.работы/Сварка/Время"] = 12;

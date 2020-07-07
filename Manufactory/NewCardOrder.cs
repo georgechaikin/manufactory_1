@@ -14,11 +14,15 @@ namespace Manufactory
     public partial class NewCardOrder : Form
     {
         Dictionary<string, Control> headingTextBoxPair;
+        Form[] forms;
         public NewCardOrder(Form[] forms)
         {
             InitializeComponent();
+            this.forms = forms;
+            this.FormClosed += new FormClosedEventHandler(this.enableMainForm);
             setHeadingTextBoxPair();
             loadCard(forms);
+            
         }
 
         private void loadCard(Form[] forms)
@@ -30,7 +34,9 @@ namespace Manufactory
                     {
                         headingTextBoxPair[x.Name].Text = x.Text;
                     }
-                    catch(KeyNotFoundException) { continue; }
+                    catch(KeyNotFoundException) {
+                        //MessageBox.Show(x.Name);
+                        continue; }
                 }
         }
         private void setHeadingTextBoxPair()
@@ -41,12 +47,21 @@ namespace Manufactory
                 switch (x)
                 {
                     case TextBox textBox:
+                        textBox.ReadOnly = true;
                         headingTextBoxPair.Add(x.Name, x);
+                        break;
+                    case ComboBox comboBox:
                         break;
                 }
             }
         }
-
+        /// <summary>
+        /// Применяется при нажатии на крестик
+        /// </summary>
+        private void enableMainForm(object sender, FormClosedEventArgs e)
+        {
+            this.forms[0].Enabled = true;//TODO: Не факт, что форма, с которой вызвали NewCardOrder, будет в начале массива. Так что желательно бы сделать более удобный способ обращения к нужному Form.
+        }
     }
 
 }
