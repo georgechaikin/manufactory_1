@@ -19,18 +19,7 @@ namespace Manufactory
         private NewPodRab podRab;
         public NewAdd()
         {
-            // 
-            // showCardButton
-            // 
-            System.Windows.Forms.Button showCardButton = new System.Windows.Forms.Button();
-            showCardButton.Location = new System.Drawing.Point(280, 54);
-            showCardButton.Name = "showCardButton";
-            showCardButton.Size = new System.Drawing.Size(125, 32);
-            showCardButton.TabIndex = 27;
-            showCardButton.Text = "Показать заказ";
-            showCardButton.UseVisualStyleBackColor = true;
-            showCardButton.Click += new System.EventHandler(this.showCard);
-            this.Controls.Add(showCardButton);
+            this.showCardButton.Click += new System.EventHandler(this.showCard);
 
             this.vidRab = new NewVidRab(this);
             this.podRab = new NewPodRab(this);
@@ -105,26 +94,26 @@ namespace Manufactory
                 {
                     try
                     {
-                        if (((TextBox)x).Text == null || ((TextBox)x).Text.Equals(String.Empty))//TODO: Сделать проверку на наличие ненужных символов и т. п.
+                        if (String.IsNullOrEmpty(x.Text))//TODO: Сделать проверку на наличие ненужных символов и т.п.
                             throw new FormatException();
 
-                        //TODO: Вместо Name лучше использовать AccessibleName, так как при изменении формы через конструктор сбрасываются имена
-                        Values.tableSheet.GetRow(Values.startrow).CreateCell(Values.numericHeadings[x.Name]).SetCellValue(Convert.ToDouble(x.Text));
+                        //TODO: Вместо Name лучше использовать AccessibleName, так как при изменении Form через конструктор сбрасываются имена
+                        Values.tableSheet.GetRow(Values.startrow).CreateCell(Values.numericHeadings[x.AccessibleName]).SetCellValue(Convert.ToDouble(x.Text));
 
 
                     }
                     catch (FormatException)// Проверяет, записаны ли данные в виде числа
                     {
-                        MessageBox.Show("В текстовой строке для " + x.Name + " нужно ввести число. Также возможно, что поле не заполнено.");
+                        MessageBox.Show("В текстовой строке для " + x.AccessibleName + " нужно ввести число. Также возможно, что поле не заполнено.");
                         success = false;
                         break;
                     }
 
-                    /*catch (NullReferenceException)
+                    catch (NullReferenceException)
                     {
                         continue;
                     }
-                    */
+
                     catch (KeyNotFoundException)//Если textBox не указан в списке числовых данных, то он ищется уже в списке строчных данных
                     {
                         #region Поиск textBox'a в списке строчных данных (Values.stringHeadings)

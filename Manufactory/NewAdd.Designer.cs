@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.showCardButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,6 +57,15 @@
             this.materialCostTextBox = new System.Windows.Forms.TextBox();
             this.productTextBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
+            // 
+            // showCardButton
+            // 
+            this.showCardButton.Location = new System.Drawing.Point(280, 54);
+            this.showCardButton.Name = "showCardButton";
+            this.showCardButton.Size = new System.Drawing.Size(125, 32);
+            this.showCardButton.TabIndex = 27;
+            this.showCardButton.Text = "Показать заказ";
+            this.showCardButton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -204,7 +214,7 @@
             // podRabButton
             // 
             this.podRabButton.Location = new System.Drawing.Point(202, 483);
-            this.podRabButton.Name = "button2";
+            this.podRabButton.Name = "podRabButton";
             this.podRabButton.Size = new System.Drawing.Size(92, 26);
             this.podRabButton.TabIndex = 16;
             this.podRabButton.Text = "Редактировать";
@@ -214,7 +224,7 @@
             // vidRabButton
             // 
             this.vidRabButton.Location = new System.Drawing.Point(202, 529);
-            this.vidRabButton.Name = "button3";
+            this.vidRabButton.Name = "vidRabButton";
             this.vidRabButton.Size = new System.Drawing.Size(92, 26);
             this.vidRabButton.TabIndex = 17;
             this.vidRabButton.Text = "Редактировать";
@@ -224,7 +234,7 @@
             // addOrderButtton
             // 
             this.addOrderButtton.Location = new System.Drawing.Point(12, 574);
-            this.addOrderButtton.Name = "AddOrderBut";
+            this.addOrderButtton.Name = "addOrderButtton";
             this.addOrderButtton.Size = new System.Drawing.Size(383, 35);
             this.addOrderButtton.TabIndex = 18;
             this.addOrderButtton.Text = "Добавить";
@@ -240,34 +250,39 @@
             // 
             // clientNameTextBox
             // 
+            this.clientNameTextBox.AccessibleName = "Заказчик";
             this.clientNameTextBox.Location = new System.Drawing.Point(103, 91);
-            this.clientNameTextBox.Name = "Заказчик";
+            this.clientNameTextBox.Name = "clientNameTextBox";
             this.clientNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.clientNameTextBox.TabIndex = 20;
             // 
             // productNameTextBox
             // 
+            this.productNameTextBox.AccessibleName = "Изделие/Наименование";
             this.productNameTextBox.Location = new System.Drawing.Point(103, 199);
-            this.productNameTextBox.Name = "Изделие/Наименование";
+            this.productNameTextBox.Name = "productNameTextBox";
             this.productNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.productNameTextBox.TabIndex = 21;
             // 
             // productNumberTextBox
             // 
+            this.productNumberTextBox.AccessibleName = "Изделие/Кол-во";
             this.productNumberTextBox.Location = new System.Drawing.Point(103, 231);
-            this.productNumberTextBox.Name = "Изделие/Кол-во";
+            this.productNumberTextBox.Name = "productNumberTextBox";
             this.productNumberTextBox.Size = new System.Drawing.Size(100, 20);
             this.productNumberTextBox.TabIndex = 22;
             // 
-            // texmaterialTypeTextBoxtBox5
+            // materialTypeTextBox
             // 
+            this.materialTypeTextBox.AccessibleName = "Материал/Вид";
             this.materialTypeTextBox.Location = new System.Drawing.Point(103, 339);
-            this.materialTypeTextBox.Name = "Материал/Вид";
+            this.materialTypeTextBox.Name = "materialTypeTextBox";
             this.materialTypeTextBox.Size = new System.Drawing.Size(100, 20);
             this.materialTypeTextBox.TabIndex = 23;
             // 
             // textBox6
             // 
+            this.textBox6.AccessibleName = "Материал/Тип";
             this.textBox6.Location = new System.Drawing.Point(103, 377);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
@@ -275,26 +290,29 @@
             // 
             // materialSizeTextBox
             // 
+            this.materialSizeTextBox.AccessibleName = "Материал/Размеры";
             this.materialSizeTextBox.Location = new System.Drawing.Point(103, 413);
-            this.materialSizeTextBox.Name = "Материал/Размеры";
+            this.materialSizeTextBox.Name = "materialSizeTextBox";
             this.materialSizeTextBox.Size = new System.Drawing.Size(100, 20);
             this.materialSizeTextBox.TabIndex = 25;
             // 
             // materialCostTextBox
             // 
+            this.materialCostTextBox.AccessibleName = "Материал/Стоимость";
             this.materialCostTextBox.Location = new System.Drawing.Point(103, 445);
-            this.materialCostTextBox.Name = "Материал/Стоимость";
+            this.materialCostTextBox.Name = "materialCostTextBox";
             this.materialCostTextBox.Size = new System.Drawing.Size(100, 20);
             this.materialCostTextBox.TabIndex = 26;
             // 
             // productTextBox
             // 
+            this.productTextBox.AccessibleName = "Изделие";
             this.productTextBox.FormattingEnabled = true;
-            this.productTextBox.Items.AddRange(new string[] {
+            this.productTextBox.Items.AddRange(new object[] {
             "Изделие",
             "Комплексный заказ"});
             this.productTextBox.Location = new System.Drawing.Point(22, 168);
-            this.productTextBox.Name = "Изделие";
+            this.productTextBox.Name = "productTextBox";
             this.productTextBox.Size = new System.Drawing.Size(121, 21);
             this.productTextBox.TabIndex = 12;
             // 
@@ -331,6 +349,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.showCardButton);
             this.Name = "NewAdd";
             this.Text = "AddOrder";
             this.Load += new System.EventHandler(this.NewAdd_Load);
@@ -368,5 +387,7 @@
         private System.Windows.Forms.TextBox materialSizeTextBox;
         private System.Windows.Forms.TextBox materialCostTextBox;
         private System.Windows.Forms.ComboBox productTextBox;
+        private System.Windows.Forms.Button showCardButton;
+
     }
 }

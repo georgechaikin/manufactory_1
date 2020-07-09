@@ -94,20 +94,23 @@
             // 
             // materialCostTextBox
             // 
+            this.materialCostTextBox.AccessibleName = "Материал/Стоимость";
             this.materialCostTextBox.Location = new System.Drawing.Point(66, 309);
-            this.materialCostTextBox.Name = "Материал/Стоимость";
+            this.materialCostTextBox.Name = "materialCostTextBox";
             this.materialCostTextBox.Size = new System.Drawing.Size(100, 20);
             this.materialCostTextBox.TabIndex = 51;
             // 
             // materialSizeTextBox
             // 
+            this.materialSizeTextBox.AccessibleName = "Материал/Размеры";
             this.materialSizeTextBox.Location = new System.Drawing.Point(66, 277);
-            this.materialSizeTextBox.Name = "Материал/Размеры";
+            this.materialSizeTextBox.Name = "materialSizeTextBox";
             this.materialSizeTextBox.Size = new System.Drawing.Size(100, 20);
             this.materialSizeTextBox.TabIndex = 50;
             // 
             // textBox6
             // 
+            this.textBox6.AccessibleName = "Материал/Тип";
             this.textBox6.Location = new System.Drawing.Point(66, 241);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
@@ -115,29 +118,33 @@
             // 
             // materialTypeTextBox
             // 
+            this.materialTypeTextBox.AccessibleName = "Материал/Вид";
             this.materialTypeTextBox.Location = new System.Drawing.Point(66, 203);
-            this.materialTypeTextBox.Name = "Материал/Вид";
+            this.materialTypeTextBox.Name = "materialTypeTextBox";
             this.materialTypeTextBox.Size = new System.Drawing.Size(100, 20);
             this.materialTypeTextBox.TabIndex = 48;
             // 
-            // textBox4
+            // productNumberTextBox
             // 
+            this.productNumberTextBox.AccessibleName = "Изделие/Кол-во";
             this.productNumberTextBox.Location = new System.Drawing.Point(330, 183);
-            this.productNumberTextBox.Name = "Изделие/Кол-во";
+            this.productNumberTextBox.Name = "productNumberTextBox";
             this.productNumberTextBox.Size = new System.Drawing.Size(100, 20);
             this.productNumberTextBox.TabIndex = 47;
             // 
-            // textBox3
+            // productNameTextBox
             // 
+            this.productNameTextBox.AccessibleName = "Изделие/Наименование";
             this.productNameTextBox.Location = new System.Drawing.Point(330, 136);
-            this.productNameTextBox.Name = "Изделие/Наименование";
+            this.productNameTextBox.Name = "productNameTextBox";
             this.productNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.productNameTextBox.TabIndex = 46;
             // 
-            // textBox2
+            // clientNameTextBox
             // 
+            this.clientNameTextBox.AccessibleName = "Заказчик";
             this.clientNameTextBox.Location = new System.Drawing.Point(98, 64);
-            this.clientNameTextBox.Name = "Заказчик";
+            this.clientNameTextBox.Name = "clientNameTextBox";
             this.clientNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.clientNameTextBox.TabIndex = 45;
             // 
@@ -150,14 +157,9 @@
             // 
             // comboBox2
             // 
-            //this.comboBox2.FormattingEnabled = true;
-            //this.comboBox2.Items.AddRange(new object[] {
-            //"плита",
-            //"круг",
-            //"квадратный лист"});
             this.comboBox2.Location = new System.Drawing.Point(309, 229);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.Size = new System.Drawing.Size(121, 20);
             this.comboBox2.TabIndex = 40;
             // 
             // label12
@@ -274,68 +276,72 @@
             // 
             // comboBox1
             // 
-            //this.comboBox1.FormattingEnabled = true;
-            //this.comboBox1.Items.AddRange(new object[] {
-            //"Изделие",
-            //"Комплексный заказ"});
             this.comboBox1.Location = new System.Drawing.Point(309, 83);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(121, 20);
             this.comboBox1.TabIndex = 39;
             // 
             // textBox9
             // 
+            this.textBox9.AccessibleName = "Сварочная работа/Стоимость";
             this.textBox9.Location = new System.Drawing.Point(837, 671);
-            this.textBox9.Name = "Сварочная работа/Стоимость";
+            this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 20);
             this.textBox9.TabIndex = 68;
             // 
             // textBox10
             // 
+            this.textBox10.AccessibleName = "Слесарная обработка/Стоимость";
             this.textBox10.Location = new System.Drawing.Point(837, 576);
-            this.textBox10.Name = "Слесарная обработка/Стоимость";
+            this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(100, 20);
             this.textBox10.TabIndex = 67;
             // 
             // textBox11
             // 
+            this.textBox11.AccessibleName = "Токарные работы/Стоимость";
             this.textBox11.Location = new System.Drawing.Point(837, 484);
-            this.textBox11.Name = "Токарные работы/Стоимость";
+            this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(100, 20);
             this.textBox11.TabIndex = 66;
             // 
             // textBox12
             // 
+            this.textBox12.AccessibleName = "Фрезерование/Стоимость";
             this.textBox12.Location = new System.Drawing.Point(837, 393);
-            this.textBox12.Name = "Фрезерование/Стоимость";
+            this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(100, 20);
             this.textBox12.TabIndex = 65;
             // 
             // textBox13
             // 
+            this.textBox13.AccessibleName = "Сварочная работа/Время";
             this.textBox13.Location = new System.Drawing.Point(667, 671);
-            this.textBox13.Name = "Сварочная работа/Время";
+            this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(100, 20);
             this.textBox13.TabIndex = 64;
             // 
             // textBox14
             // 
+            this.textBox14.AccessibleName = "Слесарная обработка/Время";
             this.textBox14.Location = new System.Drawing.Point(667, 576);
-            this.textBox14.Name = "Слесарная обработка/Время";
+            this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(100, 20);
             this.textBox14.TabIndex = 63;
             // 
             // textBox15
             // 
+            this.textBox15.AccessibleName = "Токарные работы/Время";
             this.textBox15.Location = new System.Drawing.Point(667, 484);
-            this.textBox15.Name = "Токарные работы/Время";
+            this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(100, 20);
             this.textBox15.TabIndex = 62;
             // 
             // textBox16
             // 
+            this.textBox16.AccessibleName = "Фрезерование/Время";
             this.textBox16.Location = new System.Drawing.Point(667, 393);
-            this.textBox16.Name = "Фрезерование/Время";
+            this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(100, 20);
             this.textBox16.TabIndex = 61;
             // 
@@ -426,57 +432,65 @@
             // 
             // weldingCostTextBox
             // 
+            this.weldingCostTextBox.AccessibleName = "Под.работы/Сварка/Стоимость";
             this.weldingCostTextBox.Location = new System.Drawing.Point(444, 669);
-            this.weldingCostTextBox.Name = "Под.работы/Сварка/Стоимость";
+            this.weldingCostTextBox.Name = "weldingCostTextBox";
             this.weldingCostTextBox.Size = new System.Drawing.Size(100, 20);
             this.weldingCostTextBox.TabIndex = 85;
             // 
             // locksmithCostTextBox
             // 
+            this.locksmithCostTextBox.AccessibleName = "Под.работы/Слесарка/Стоимость";
             this.locksmithCostTextBox.Location = new System.Drawing.Point(444, 574);
-            this.locksmithCostTextBox.Name = "Под.работы/Слесарка/Стоимость";
+            this.locksmithCostTextBox.Name = "locksmithCostTextBox";
             this.locksmithCostTextBox.Size = new System.Drawing.Size(100, 20);
             this.locksmithCostTextBox.TabIndex = 84;
             // 
             // latheCostTextBox
             // 
+            this.latheCostTextBox.AccessibleName = "Под.работы/Токарка/Стоимость";
             this.latheCostTextBox.Location = new System.Drawing.Point(444, 482);
-            this.latheCostTextBox.Name = "Под.работы/Токарка/Стоимость";
+            this.latheCostTextBox.Name = "latheCostTextBox";
             this.latheCostTextBox.Size = new System.Drawing.Size(100, 20);
             this.latheCostTextBox.TabIndex = 83;
             // 
             // millingCostTextBox
             // 
+            this.millingCostTextBox.AccessibleName = "Под.работы/Фрезеровка/Стоимость";
             this.millingCostTextBox.Location = new System.Drawing.Point(444, 391);
-            this.millingCostTextBox.Name = "Под.работы/Фрезеровка/Стоимость";
+            this.millingCostTextBox.Name = "millingCostTextBox";
             this.millingCostTextBox.Size = new System.Drawing.Size(100, 20);
             this.millingCostTextBox.TabIndex = 82;
             // 
             // weldingTimeTextBox
             // 
+            this.weldingTimeTextBox.AccessibleName = "Под.работы/Сварка/Время";
             this.weldingTimeTextBox.Location = new System.Drawing.Point(274, 669);
-            this.weldingTimeTextBox.Name = "Под.работы/Сварка/Время";
+            this.weldingTimeTextBox.Name = "weldingTimeTextBox";
             this.weldingTimeTextBox.Size = new System.Drawing.Size(100, 20);
             this.weldingTimeTextBox.TabIndex = 81;
             // 
             // locksmithTimeTextBox
             // 
+            this.locksmithTimeTextBox.AccessibleName = "Под.работы/Слесарка/Время";
             this.locksmithTimeTextBox.Location = new System.Drawing.Point(274, 574);
-            this.locksmithTimeTextBox.Name = "Под.работы/Слесарка/Время";
+            this.locksmithTimeTextBox.Name = "locksmithTimeTextBox";
             this.locksmithTimeTextBox.Size = new System.Drawing.Size(100, 20);
             this.locksmithTimeTextBox.TabIndex = 80;
             // 
             // latheTimeTextBox
             // 
+            this.latheTimeTextBox.AccessibleName = "Под.работы/Токарка/Время";
             this.latheTimeTextBox.Location = new System.Drawing.Point(274, 482);
-            this.latheTimeTextBox.Name = "Под.работы/Токарка/Время";
+            this.latheTimeTextBox.Name = "latheTimeTextBox";
             this.latheTimeTextBox.Size = new System.Drawing.Size(100, 20);
             this.latheTimeTextBox.TabIndex = 79;
             // 
             // millingTimeTextBox
             // 
+            this.millingTimeTextBox.AccessibleName = "Под.работы/Фрезеровка/Время";
             this.millingTimeTextBox.Location = new System.Drawing.Point(274, 391);
-            this.millingTimeTextBox.Name = "Под.работы/Фрезеровка/Время";
+            this.millingTimeTextBox.Name = "millingTimeTextBox";
             this.millingTimeTextBox.Size = new System.Drawing.Size(100, 20);
             this.millingTimeTextBox.TabIndex = 78;
             // 
@@ -577,8 +591,9 @@
             // 
             // totalCostTextBox
             // 
+            this.totalCostTextBox.AccessibleName = "Итоговая стоимость";
             this.totalCostTextBox.Location = new System.Drawing.Point(66, 426);
-            this.totalCostTextBox.Name = "Итоговая стоимость";
+            this.totalCostTextBox.Name = "totalCostTextBox";
             this.totalCostTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalCostTextBox.TabIndex = 87;
             // 
@@ -596,7 +611,7 @@
             this.label33.AutoSize = true;
             this.label33.Location = new System.Drawing.Point(16, 449);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(160, 13);
+            this.label33.Size = new System.Drawing.Size(157, 13);
             this.label33.TabIndex = 90;
             this.label33.Text = "кол- детлей*стоимость одной";
             // 
@@ -623,7 +638,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1023, 662);
+            this.ClientSize = new System.Drawing.Size(1057, 662);
             this.Controls.Add(this.label35);
             this.Controls.Add(this.label34);
             this.Controls.Add(this.label33);

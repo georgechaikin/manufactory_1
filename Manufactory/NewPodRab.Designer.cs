@@ -145,64 +145,73 @@
             this.label10.TabIndex = 9;
             this.label10.Text = "СТОИМОСТЬ";
             // 
-            // textBox1
+            // millingTimeTextBox
             // 
+            this.millingTimeTextBox.AccessibleName = "Под.работы/Фрезеровка/Время";
             this.millingTimeTextBox.Location = new System.Drawing.Point(75, 121);
-            this.millingTimeTextBox.Name = "Под.работы/Фрезеровка/Время";
+            this.millingTimeTextBox.Name = "millingTimeTextBox";
             this.millingTimeTextBox.Size = new System.Drawing.Size(100, 20);
             this.millingTimeTextBox.TabIndex = 10;
             // 
             // textBox2
             // 
+            this.textBox2.AccessibleName = "Под.работы/Токарка/Время";
             this.textBox2.Location = new System.Drawing.Point(75, 212);
-            this.textBox2.Name = "Под.работы/Токарка/Время";
+            this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 11;
             // 
             // textBox3
             // 
+            this.textBox3.AccessibleName = "Под.работы/Слесарка/Время";
             this.textBox3.Location = new System.Drawing.Point(75, 304);
-            this.textBox3.Name = "Под.работы/Слесарка/Время";
+            this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 12;
             // 
             // textBox4
             // 
+            this.textBox4.AccessibleName = "Под.работы/Сварка/Время";
             this.textBox4.Location = new System.Drawing.Point(75, 399);
-            this.textBox4.Name = "Под.работы/Сварка/Время";
+            this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 13;
             // 
             // textBox5
             // 
+            this.textBox5.AccessibleName = "Под.работы/Фрезеровка/Стоимость";
             this.textBox5.Location = new System.Drawing.Point(245, 121);
-            this.textBox5.Name = "Под.работы/Фрезеровка/Стоимость";
+            this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 14;
             // 
             // textBox6
             // 
+            this.textBox6.AccessibleName = "Под.работы/Токарка/Стоимость";
             this.textBox6.Location = new System.Drawing.Point(245, 212);
-            this.textBox6.Name = "Под.работы/Токарка/Стоимость";
+            this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 15;
             // 
             // textBox7
             // 
+            this.textBox7.AccessibleName = "Под.работы/Слесарка/Стоимость";
             this.textBox7.Location = new System.Drawing.Point(245, 304);
-            this.textBox7.Name = "Под.работы/Слесарка/Стоимость";
+            this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 16;
             // 
             // textBox8
             // 
+            this.textBox8.AccessibleName = "Под.работы/Сварка/Стоимость";
             this.textBox8.Location = new System.Drawing.Point(245, 399);
-            this.textBox8.Name = "Под.работы/Сварка/Стоимость";
+            this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 20);
             this.textBox8.TabIndex = 17;
             // 
             // addPodrabButton
             // 
+            this.addPodrabButton.AccessibleName = "addPodrabButton";
             this.addPodrabButton.Location = new System.Drawing.Point(30, 435);
             this.addPodrabButton.Name = "addPodrabButton";
             this.addPodrabButton.Size = new System.Drawing.Size(314, 27);

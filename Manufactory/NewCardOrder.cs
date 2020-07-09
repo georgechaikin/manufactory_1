@@ -32,11 +32,12 @@ namespace Manufactory
                 {
                     try
                     {
-                        headingTextBoxPair[x.Name].Text = x.Text;
+                        headingTextBoxPair[x.AccessibleName].Text = x.Text;
                     }
                     catch(KeyNotFoundException) {
-                        //MessageBox.Show(x.Name);
+                        //MessageBox.Show(x.AccessibleName);
                         continue; }
+                    catch (ArgumentNullException) { continue; }
                 }
         }
         private void setHeadingTextBoxPair()
@@ -47,8 +48,14 @@ namespace Manufactory
                 switch (x)
                 {
                     case TextBox textBox:
-                        textBox.ReadOnly = true;
-                        headingTextBoxPair.Add(x.Name, x);
+                        try
+                        {
+                            textBox.ReadOnly = true;
+                            //MessageBox.Show(x.AccessibleName==null?"Empty":x.AccessibleName);
+                            headingTextBoxPair.Add(x.AccessibleName, x);
+                            
+                        }
+                        catch (ArgumentNullException) { }
                         break;
                     case ComboBox comboBox:
                         break;
