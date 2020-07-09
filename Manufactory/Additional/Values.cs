@@ -49,7 +49,7 @@ namespace Manufactory.Additional
 
         public Values(string tablePath, string TableName)
         {
-            startrow = 5;//TODO: Потом прописать автоматический поиск стартовой строки
+            startrow = 4;//TODO: Потом прописать автоматический поиск стартовой строки
             path = tablePath;
             tableName = TableName;
             headings = new Dictionary<string, int>();

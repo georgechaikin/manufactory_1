@@ -19,7 +19,6 @@ namespace Manufactory
         private NewPodRab podRab;
         public NewAdd()
         {
-            this.showCardButton.Click += new System.EventHandler(this.showCard);
 
             this.vidRab = new NewVidRab(this);
             this.podRab = new NewPodRab(this);
@@ -109,7 +108,7 @@ namespace Manufactory
                         break;
                     }
 
-                    catch (NullReferenceException)
+                    catch (ArgumentNullException)
                     {
                         continue;
                     }
@@ -119,9 +118,10 @@ namespace Manufactory
                         #region Поиск textBox'a в списке строчных данных (Values.stringHeadings)
                         try
                         {
-                            Values.tableSheet.GetRow(Values.startrow).CreateCell(Values.stringHeadings[x.Name]).SetCellValue(x.Text);//Если использовать GetCell() вместо CreateCell то независимо от try-catch может выброситься NullReferenceException.
                             if (((TextBox)x).Text == null || ((TextBox)x).Text.Equals(String.Empty))
                                 throw new FormatException();
+                            Values.tableSheet.GetRow(Values.startrow).CreateCell(Values.stringHeadings[x.AccessibleName]).SetCellValue(x.Text);//Если использовать GetCell() вместо CreateCell то независимо от try-catch может выброситься NullReferenceException.
+                            
                         }
                         catch (FormatException)// Проверяет, записаны ли данные в виде числа
                         {
@@ -129,11 +129,11 @@ namespace Manufactory
                             success = false;
                             break;
                         }
-                        /*catch (NullReferenceException e)
+                        catch (ArgumentNullException e)
                         {
                             MessageBox.Show(e.Message);
                             continue;
-                        }*/
+                        }
                         catch (KeyNotFoundException)
                         {
                             continue;
@@ -156,6 +156,12 @@ namespace Manufactory
             NewCardOrder cardOrderForm = new NewCardOrder(new Form[] { this, this.vidRab, this.podRab });
             cardOrderForm.Show();
 
+        }
+        private void showOrderList(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            OrderListForm orderListForm = new OrderListForm(1, 5);
+            orderListForm.Show();
         }
     }
 

@@ -56,6 +56,7 @@
             this.materialSizeTextBox = new System.Windows.Forms.TextBox();
             this.materialCostTextBox = new System.Windows.Forms.TextBox();
             this.productTextBox = new System.Windows.Forms.ComboBox();
+            this.showOrderListButon = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // showCardButton
@@ -66,6 +67,7 @@
             this.showCardButton.TabIndex = 27;
             this.showCardButton.Text = "Показать заказ";
             this.showCardButton.UseVisualStyleBackColor = true;
+            this.showCardButton.Click += new System.EventHandler(this.showCard);
             // 
             // label1
             // 
@@ -316,12 +318,23 @@
             this.productTextBox.Size = new System.Drawing.Size(121, 21);
             this.productTextBox.TabIndex = 12;
             // 
+            // showOrderListButon
+            // 
+            this.showOrderListButon.Location = new System.Drawing.Point(280, 94);
+            this.showOrderListButon.Name = "showOrderListButon";
+            this.showOrderListButon.Size = new System.Drawing.Size(125, 30);
+            this.showOrderListButon.TabIndex = 28;
+            this.showOrderListButon.Text = "Последние заказы";
+            this.showOrderListButon.UseVisualStyleBackColor = true;
+            this.showOrderListButon.Click += new System.EventHandler(this.showOrderList);
+            // 
             // NewAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(466, 621);
+            this.Controls.Add(this.showOrderListButon);
             this.Controls.Add(this.materialCostTextBox);
             this.Controls.Add(this.materialSizeTextBox);
             this.Controls.Add(this.textBox6);
@@ -388,6 +401,6 @@
         private System.Windows.Forms.TextBox materialCostTextBox;
         private System.Windows.Forms.ComboBox productTextBox;
         private System.Windows.Forms.Button showCardButton;
-
+        private System.Windows.Forms.Button showOrderListButon;
     }
 }
