@@ -17,11 +17,13 @@ namespace Manufactory
     {
         private NewVidRab vidRab;
         private NewPodRab podRab;
+        private int numberOfActualOrders;
         public NewAdd()
         {
 
             this.vidRab = new NewVidRab(this);
             this.podRab = new NewPodRab(this);
+            numberOfActualOrders = 0;
             InitializeComponent();
         }
 
@@ -77,6 +79,8 @@ namespace Manufactory
                     MessageBox.Show("Заказ добавлен");
                 }
             this.Enabled = true;
+            numberOfActualOrders++;
+            Values.currentRowIndex++;
         }
 
         /// <summary>
@@ -97,7 +101,7 @@ namespace Manufactory
                             throw new FormatException();
 
                         //TODO: Вместо Name лучше использовать AccessibleName, так как при изменении Form через конструктор сбрасываются имена
-                        Values.tableSheet.GetRow(Values.startrow).CreateCell(Values.numericHeadings[x.AccessibleName]).SetCellValue(Convert.ToDouble(x.Text));
+                        Values.tableSheet.GetRow(Values.currentRowIndex).CreateCell(Values.numericHeadings[x.AccessibleName]).SetCellValue(Convert.ToDouble(x.Text));
 
 
                     }
@@ -120,7 +124,7 @@ namespace Manufactory
                         {
                             if (((TextBox)x).Text == null || ((TextBox)x).Text.Equals(String.Empty))
                                 throw new FormatException();
-                            Values.tableSheet.GetRow(Values.startrow).CreateCell(Values.stringHeadings[x.AccessibleName]).SetCellValue(x.Text);//Если использовать GetCell() вместо CreateCell то независимо от try-catch может выброситься NullReferenceException.
+                            Values.tableSheet.GetRow(Values.currentRowIndex).CreateCell(Values.stringHeadings[x.AccessibleName]).SetCellValue(x.Text);//Если использовать GetCell() вместо CreateCell то независимо от try-catch может выброситься NullReferenceException.
                             
                         }
                         catch (FormatException)// Проверяет, записаны ли данные в виде числа
@@ -160,7 +164,7 @@ namespace Manufactory
         private void showOrderList(object sender, EventArgs e)
         {
             this.Enabled = false;
-            OrderListForm orderListForm = new OrderListForm(1, 5);
+            OrderListForm orderListForm = new OrderListForm(this,numberOfActualOrders, 5);
             orderListForm.Show();
         }
     }

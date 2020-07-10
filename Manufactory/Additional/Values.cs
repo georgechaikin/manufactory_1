@@ -25,7 +25,6 @@ namespace Manufactory.Additional
         /// Заголовки и соответствующие им номера в строке таблицы (строчные значения)
         /// </summary>
         public static Dictionary<string, int> stringHeadings;
-
         /// <summary>
         /// Путь до файла
         /// </summary>
@@ -35,9 +34,13 @@ namespace Manufactory.Additional
         /// </summary>
         public static string tableName;
         /// <summary>
-        /// Номер строки, с которой начинается запись(изначально это номер строки после всех заголовков)
+        /// Номер строки, с которой начинается запись
         /// </summary>
-        public static int startrow;
+        public static int startRowIndex;
+        /// <summary>
+        /// Текущий номер строки, с которой будет производиться запись
+        /// </summary>
+        public static int currentRowIndex;
         /// <summary>
         /// Excel файл, с которым производится работа
         /// </summary>
@@ -49,7 +52,8 @@ namespace Manufactory.Additional
 
         public Values(string tablePath, string TableName)
         {
-            startrow = 4;//TODO: Потом прописать автоматический поиск стартовой строки
+            startRowIndex = 4;//TODO: Потом прописать автоматический поиск стартовой строки
+            currentRowIndex = 4;
             path = tablePath;
             tableName = TableName;
             headings = new Dictionary<string, int>();
@@ -114,7 +118,7 @@ namespace Manufactory.Additional
             }
             #endregion
             #region Ищем номер строки (startrow), с которого будем начинать заполнение
-            var startRow = tableSheet.GetRow(startrow);
+            var startRow = tableSheet.GetRow(currentRowIndex);
 
             //TODO: Может быть, что row будет null, нужно тогда его создавать
             while (startRow != null)
@@ -124,12 +128,12 @@ namespace Manufactory.Additional
                 else if (startRow.GetCell(0).ToString().Equals(String.Empty))
                     break;
                 //MessageBox.Show(table_row.GetCell(0).ToString() + ": " + table_row.GetCell(0).CellType);
-                startrow++;
-                startRow = tableSheet.GetRow(startrow);
+                currentRowIndex++;
+                startRow = tableSheet.GetRow(currentRowIndex);
 
             }
             #endregion
-            MessageBox.Show("Номер последней строки: " + startrow);
+            MessageBox.Show("Номер последней строки: " + currentRowIndex);
         }
 
     }
