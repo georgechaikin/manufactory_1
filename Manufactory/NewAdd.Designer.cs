@@ -245,6 +245,7 @@
             // 
             // requestNumberTextBox
             // 
+            this.requestNumberTextBox.AccessibleName = "Номер заявки";
             this.requestNumberTextBox.Location = new System.Drawing.Point(103, 56);
             this.requestNumberTextBox.Name = "requestNumberTextBox";
             this.requestNumberTextBox.Size = new System.Drawing.Size(100, 20);

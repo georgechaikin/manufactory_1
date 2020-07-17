@@ -20,11 +20,13 @@ namespace Manufactory
         private int numberOfActualOrders;
         public NewAdd()
         {
-
             this.vidRab = new NewVidRab(this);
             this.podRab = new NewPodRab(this);
             numberOfActualOrders = 0;
             InitializeComponent();
+            this.requestNumberTextBox.Text = Values.currentRowIndex.ToString();
+            this.requestNumberTextBox.ReadOnly = true;
+
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -78,9 +80,13 @@ namespace Manufactory
                     Values.workbook.Write(fileStream);
                     MessageBox.Show("Заказ добавлен");
                 }
-            this.Enabled = true;
+            
             numberOfActualOrders++;
             Values.currentRowIndex++;
+            this.requestNumberTextBox.Text = Values.currentRowIndex.ToString();
+            this.Enabled = true;
+            
+
         }
 
         /// <summary>

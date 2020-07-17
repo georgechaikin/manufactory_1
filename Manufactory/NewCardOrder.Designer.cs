@@ -149,7 +149,8 @@
             this.clientNameTextBox.TabIndex = 45;
             // 
             // textBox1
-            // 
+            //
+            this.textBox1.AccessibleName = "Номер заявки";
             this.textBox1.Location = new System.Drawing.Point(98, 25);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);

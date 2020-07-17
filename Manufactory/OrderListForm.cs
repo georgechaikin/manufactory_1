@@ -40,7 +40,7 @@ namespace Manufactory
             Dictionary<int, string> headings = Values.headings.ToDictionary(s => s.Value, s => s.Key);
             var keyArray = headings.Keys.ToArray();
             //Array.Sort(keyArray);
-            
+
             //Задаем заголовки для обоих DataGridView
             for (int i = 0; i < keyArray.Length; i++)
             {
@@ -49,25 +49,37 @@ namespace Manufactory
 
             }
 
+            //Вычитаем из i эти значения в методе setCellValue, чтобы заполнять соответствующие таблицы с нужного индекса (чтобы не выходить за рамки существующих строк)
+            int actualBeginIndex = Values.currentRowIndex - numberOfActualOrders;
+            int pastBeginIndex = Values.currentRowIndex - numberOfActualOrders - numberOfPastOrders;
+
             //Заполняем actualGridView
             //TODO: Добавить условие на считывание за пределами данных
             for (int i = Values.currentRowIndex - numberOfActualOrders; i < Values.currentRowIndex; i++)
             {
-                if (i < Values.startRowIndex) continue;
+                if (i < Values.startRowIndex)
+                {
+                    actualBeginIndex++;
+                    continue;
+                }
                 this.actualGridView.Rows.Add();
                 for (int j = 0; j < keyArray.Length; j++)
                 {
-                    setCellValue(this.actualGridView, i, j, Values.currentRowIndex - numberOfActualOrders);
+                    setCellValue(this.actualGridView, i, j, actualBeginIndex);
                 }
             }
             //Заполняем pastGridView
             for (int i = Values.currentRowIndex - numberOfActualOrders - numberOfPastOrders; i < Values.currentRowIndex - numberOfActualOrders; i++)
             {
-                if (i < Values.startRowIndex) continue;
+                if (i < Values.startRowIndex)
+                {
+                    pastBeginIndex++;
+                    continue;
+                }
                 this.pastGridView.Rows.Add();
                 for (int j = 0; j < keyArray.Length; j++)
                 {
-                    setCellValue(this.pastGridView, i, j, Values.currentRowIndex - numberOfActualOrders - numberOfPastOrders);
+                    setCellValue(this.pastGridView, i, j, pastBeginIndex);
                 }
             }
         }
@@ -77,13 +89,15 @@ namespace Manufactory
         /// <param name="dataGridView">DataGridView для заполнения</param>
         /// <param name="i">Индекс строки в Values.tableSheet</param>
         /// <param name="j">Индекс столбца в Values.tableSheet</param>
-        /// <param name="beginIndex">Вычитаем из индекса строки beginIndex, чтобы заполнение начиналось с нулевой строки</param>
+        /// <param name="beginIndex">Вычитаем из индекса строки значение beginIndex, чтобы заполнение начиналось с нулевой строки</param>
         private void setCellValue(DataGridView dataGridView, int i, int j, int beginIndex)
         {
             //MessageBox.Show(i + "," + j);
             var cell = Values.tableSheet.GetRow(i).GetCell(j);
             if (cell != null)
             {
+                //MessageBox.Show((i).ToString() + "," + j.ToString());
+                //MessageBox.Show((i - beginIndex).ToString() + "," + j.ToString());
                 //Заполняем ячейку в зависимости от типа данных
                 //Можно потом добавить не только считывание строчек и цифр, а также формул(возможно и ссылок, надо потом попробовать)
                 switch (cell.CellType)
