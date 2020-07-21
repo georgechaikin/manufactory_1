@@ -65,27 +65,30 @@ namespace Manufactory.Additional
             //Пока headings будет заполняться вручную
             numericHeadings["Номер заявки"] = 0;
             stringHeadings["Заказчик"] = 1;
-            stringHeadings["Изделие/Наименование"] = 2;
-            numericHeadings["Изделие/Кол-во"] = 3;
-            stringHeadings["Материал/Вид"] = 4;
-            stringHeadings["Материал/Размеры"] = 5;
-            numericHeadings["Материал/Стоимость"] = 6;
-            numericHeadings["Под.работы/Фрезеровка/Время"] = 7;
-            numericHeadings["Под.работы/Фрезеровка/Стоимость"] = 8;
-            numericHeadings["Под.работы/Токарка/Время"] = 9;
-            numericHeadings["Под.работы/Токарка/Стоимость"] = 10;
-            numericHeadings["Под.работы/Слесарка/Время"] = 11;
-            numericHeadings["Под.работы/Слесарка/Стоимость"] = 12;
-            numericHeadings["Под.работы/Сварка/Время"] = 13;
-            numericHeadings["Под.работы/Сварка/Стоимость"] = 14;
-            numericHeadings["Фрезерование/Время"] = 15;
-            numericHeadings["Фрезерование/Стоимость"] = 16;
-            numericHeadings["Токарные работы/Время"] = 17;
-            numericHeadings["Токарные работы/Стоимость"] = 18;
-            numericHeadings["Слесарная обработка/Время"] = 19;
-            numericHeadings["Слесарная обработка/Стоимость"] = 20;
-            numericHeadings["Сварочная работа/Время"] = 21;
-            numericHeadings["Сварочная работа/Стоимость"] = 22;
+            stringHeadings["Изделие/Тип заказа"] = 2;//
+            stringHeadings["Изделие/Наименование"] = 3;
+            numericHeadings["Изделие/Кол-во"] = 4;
+            stringHeadings["Изделие/Вид"] = 5;//
+            stringHeadings["Материал/Вид"] = 6;
+            stringHeadings["Материал/Тип"] = 7;//
+            stringHeadings["Материал/Размеры"] = 8;
+            numericHeadings["Материал/Стоимость"] = 9;
+            numericHeadings["Под.работы/Фрезеровка/Время"] = 10;
+            numericHeadings["Под.работы/Фрезеровка/Стоимость"] = 11;
+            numericHeadings["Под.работы/Токарка/Время"] = 12;
+            numericHeadings["Под.работы/Токарка/Стоимость"] = 13;
+            numericHeadings["Под.работы/Слесарка/Время"] = 14;
+            numericHeadings["Под.работы/Слесарка/Стоимость"] = 15;
+            numericHeadings["Под.работы/Сварка/Время"] = 16;
+            numericHeadings["Под.работы/Сварка/Стоимость"] = 17;
+            numericHeadings["Фрезерование/Время"] = 18;
+            numericHeadings["Фрезерование/Стоимость"] = 19;
+            numericHeadings["Токарные работы/Время"] = 20;
+            numericHeadings["Токарные работы/Стоимость"] = 21;
+            numericHeadings["Слесарная обработка/Время"] = 22;
+            numericHeadings["Слесарная обработка/Стоимость"] = 23;
+            numericHeadings["Сварочная работа/Время"] = 24;
+            numericHeadings["Сварочная работа/Стоимость"] = 25;
 
             headings = numericHeadings.Union(stringHeadings).ToDictionary(s=>s.Key,s=>s.Value);
             

@@ -30,13 +30,13 @@
         {
             this.materialCostTextBox = new System.Windows.Forms.TextBox();
             this.materialSizeTextBox = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.materialKindTextBox = new System.Windows.Forms.TextBox();
             this.materialTypeTextBox = new System.Windows.Forms.TextBox();
             this.productNumberTextBox = new System.Windows.Forms.TextBox();
             this.productNameTextBox = new System.Windows.Forms.TextBox();
             this.clientNameTextBox = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.TextBox();
+            this.productKindTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.TextBox();
+            this.productTypeTextBox = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -108,13 +108,13 @@
             this.materialSizeTextBox.Size = new System.Drawing.Size(100, 20);
             this.materialSizeTextBox.TabIndex = 50;
             // 
-            // textBox6
+            // materialKindTextBox
             // 
-            this.textBox6.AccessibleName = "Материал/Тип";
-            this.textBox6.Location = new System.Drawing.Point(66, 241);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 49;
+            this.materialKindTextBox.AccessibleName = "Материал/Тип";
+            this.materialKindTextBox.Location = new System.Drawing.Point(66, 241);
+            this.materialKindTextBox.Name = "materialKindTextBox";
+            this.materialKindTextBox.Size = new System.Drawing.Size(100, 20);
+            this.materialKindTextBox.TabIndex = 49;
             // 
             // materialTypeTextBox
             // 
@@ -149,19 +149,20 @@
             this.clientNameTextBox.TabIndex = 45;
             // 
             // textBox1
-            //
+            // 
             this.textBox1.AccessibleName = "Номер заявки";
             this.textBox1.Location = new System.Drawing.Point(98, 25);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 44;
             // 
-            // comboBox2
+            // productKindTextBox
             // 
-            this.comboBox2.Location = new System.Drawing.Point(309, 229);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 20);
-            this.comboBox2.TabIndex = 40;
+            this.productKindTextBox.AccessibleName = "Изделие/Вид";
+            this.productKindTextBox.Location = new System.Drawing.Point(309, 229);
+            this.productKindTextBox.Name = "productKindTextBox";
+            this.productKindTextBox.Size = new System.Drawing.Size(121, 20);
+            this.productKindTextBox.TabIndex = 40;
             // 
             // label12
             // 
@@ -275,12 +276,13 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "Номер заявки";
             // 
-            // comboBox1
+            // productTypeTextBox
             // 
-            this.comboBox1.Location = new System.Drawing.Point(309, 83);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 39;
+            this.productTypeTextBox.AccessibleName = "Изделие/Тип заказа";
+            this.productTypeTextBox.Location = new System.Drawing.Point(309, 83);
+            this.productTypeTextBox.Name = "productTypeTextBox";
+            this.productTypeTextBox.Size = new System.Drawing.Size(121, 20);
+            this.productTypeTextBox.TabIndex = 39;
             // 
             // textBox9
             // 
@@ -639,7 +641,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1057, 662);
+            this.ClientSize = new System.Drawing.Size(1091, 662);
             this.Controls.Add(this.label35);
             this.Controls.Add(this.label34);
             this.Controls.Add(this.label33);
@@ -682,14 +684,14 @@
             this.Controls.Add(this.label21);
             this.Controls.Add(this.materialCostTextBox);
             this.Controls.Add(this.materialSizeTextBox);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.materialKindTextBox);
             this.Controls.Add(this.materialTypeTextBox);
             this.Controls.Add(this.productNumberTextBox);
             this.Controls.Add(this.productNameTextBox);
             this.Controls.Add(this.clientNameTextBox);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.productKindTextBox);
+            this.Controls.Add(this.productTypeTextBox);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -713,13 +715,13 @@
 
         private System.Windows.Forms.TextBox materialCostTextBox;
         private System.Windows.Forms.TextBox materialSizeTextBox;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox materialKindTextBox;
         private System.Windows.Forms.TextBox materialTypeTextBox;
         private System.Windows.Forms.TextBox productNumberTextBox;
         private System.Windows.Forms.TextBox productNameTextBox;
         private System.Windows.Forms.TextBox clientNameTextBox;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox comboBox2;
+        private System.Windows.Forms.TextBox productKindTextBox;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -732,7 +734,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox comboBox1;
+        private System.Windows.Forms.TextBox productTypeTextBox;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;

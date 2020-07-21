@@ -51,7 +51,7 @@ namespace Manufactory
                         try
                         {
                             textBox.ReadOnly = true;
-                            //MessageBox.Show(x.AccessibleName==null?"Empty":x.AccessibleName);
+                            //MessageBox.Show(x.AccessibleName == null ? "Empty" : x.AccessibleName);
                             headingTextBoxPair.Add(x.AccessibleName, x);
                             
                         }

@@ -41,7 +41,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.productKindComboBox = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.podRabButton = new System.Windows.Forms.Button();
@@ -52,10 +52,10 @@
             this.productNameTextBox = new System.Windows.Forms.TextBox();
             this.productNumberTextBox = new System.Windows.Forms.TextBox();
             this.materialTypeTextBox = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.materialKindTextBox = new System.Windows.Forms.TextBox();
             this.materialSizeTextBox = new System.Windows.Forms.TextBox();
             this.materialCostTextBox = new System.Windows.Forms.TextBox();
-            this.productTextBox = new System.Windows.Forms.ComboBox();
+            this.productTypeComboBox = new System.Windows.Forms.ComboBox();
             this.showOrderListButon = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -181,18 +181,19 @@
             this.label12.TabIndex = 11;
             this.label12.Text = "Вид работ";
             // 
-            // comboBox2
+            // productKindComboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.productKindComboBox.AccessibleName = "Изделие/Вид";
+            this.productKindComboBox.FormattingEnabled = true;
+            this.productKindComboBox.Items.AddRange(new object[] {
             "плита",
             "круг",
             "квадратный лист"});
-            this.comboBox2.Location = new System.Drawing.Point(22, 263);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 13;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.productKindComboBox.Location = new System.Drawing.Point(22, 263);
+            this.productKindComboBox.Name = "productKindComboBox";
+            this.productKindComboBox.Size = new System.Drawing.Size(121, 21);
+            this.productKindComboBox.TabIndex = 13;
+            this.productKindComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -283,13 +284,13 @@
             this.materialTypeTextBox.Size = new System.Drawing.Size(100, 20);
             this.materialTypeTextBox.TabIndex = 23;
             // 
-            // textBox6
+            // materialKindTextBox
             // 
-            this.textBox6.AccessibleName = "Материал/Тип";
-            this.textBox6.Location = new System.Drawing.Point(103, 377);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 24;
+            this.materialKindTextBox.AccessibleName = "Материал/Тип";
+            this.materialKindTextBox.Location = new System.Drawing.Point(103, 377);
+            this.materialKindTextBox.Name = "materialKindTextBox";
+            this.materialKindTextBox.Size = new System.Drawing.Size(100, 20);
+            this.materialKindTextBox.TabIndex = 24;
             // 
             // materialSizeTextBox
             // 
@@ -307,17 +308,17 @@
             this.materialCostTextBox.Size = new System.Drawing.Size(100, 20);
             this.materialCostTextBox.TabIndex = 26;
             // 
-            // productTextBox
+            // productTypeComboBox
             // 
-            this.productTextBox.AccessibleName = "Изделие";
-            this.productTextBox.FormattingEnabled = true;
-            this.productTextBox.Items.AddRange(new object[] {
+            this.productTypeComboBox.AccessibleName = "Изделие/Тип заказа";
+            this.productTypeComboBox.FormattingEnabled = true;
+            this.productTypeComboBox.Items.AddRange(new object[] {
             "Изделие",
             "Комплексный заказ"});
-            this.productTextBox.Location = new System.Drawing.Point(22, 168);
-            this.productTextBox.Name = "productTextBox";
-            this.productTextBox.Size = new System.Drawing.Size(121, 21);
-            this.productTextBox.TabIndex = 12;
+            this.productTypeComboBox.Location = new System.Drawing.Point(22, 168);
+            this.productTypeComboBox.Name = "productTypeComboBox";
+            this.productTypeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.productTypeComboBox.TabIndex = 12;
             // 
             // showOrderListButon
             // 
@@ -338,7 +339,7 @@
             this.Controls.Add(this.showOrderListButon);
             this.Controls.Add(this.materialCostTextBox);
             this.Controls.Add(this.materialSizeTextBox);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.materialKindTextBox);
             this.Controls.Add(this.materialTypeTextBox);
             this.Controls.Add(this.productNumberTextBox);
             this.Controls.Add(this.productNameTextBox);
@@ -349,8 +350,8 @@
             this.Controls.Add(this.podRabButton);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.productTextBox);
+            this.Controls.Add(this.productKindComboBox);
+            this.Controls.Add(this.productTypeComboBox);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -386,7 +387,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox productKindComboBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button podRabButton;
@@ -397,10 +398,10 @@
         private System.Windows.Forms.TextBox productNameTextBox;
         private System.Windows.Forms.TextBox productNumberTextBox;
         private System.Windows.Forms.TextBox materialTypeTextBox;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox materialKindTextBox;
         private System.Windows.Forms.TextBox materialSizeTextBox;
         private System.Windows.Forms.TextBox materialCostTextBox;
-        private System.Windows.Forms.ComboBox productTextBox;
+        private System.Windows.Forms.ComboBox productTypeComboBox;
         private System.Windows.Forms.Button showCardButton;
         private System.Windows.Forms.Button showOrderListButon;
     }

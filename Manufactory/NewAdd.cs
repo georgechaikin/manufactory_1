@@ -24,7 +24,7 @@ namespace Manufactory
             this.podRab = new NewPodRab(this);
             numberOfActualOrders = 0;
             InitializeComponent();
-            this.requestNumberTextBox.Text = Values.currentRowIndex.ToString();
+            this.requestNumberTextBox.Text = (Values.currentRowIndex-Values.startRowIndex).ToString();
             this.requestNumberTextBox.ReadOnly = true;
 
         }
@@ -69,13 +69,16 @@ namespace Manufactory
         private void addOrder(object sender, EventArgs e)
         {
             this.Enabled = false;
-
+            if (Values.tableSheet.GetRow(Values.currentRowIndex) == null)
+                Values.tableSheet.CreateRow(Values.currentRowIndex);
             bool newAddSuccess = addCellsFromCollection(this.Controls);
             bool vidRabSuccess = addCellsFromCollection(this.vidRab.Controls);
             bool podRabSuccess = addCellsFromCollection(this.podRab.Controls);
 
+
+            //TODO: Найти более правильный способ избежать повреждения файла (в данный момент используется FileMode.Create вместо FileMode.Open)
             if (newAddSuccess && vidRabSuccess && podRabSuccess)
-                using (var fileStream = new FileStream(Values.path, FileMode.Open, FileAccess.Write))
+                using (var fileStream = new FileStream(Values.path, FileMode.Create, FileAccess.Write))
                 {
                     Values.workbook.Write(fileStream);
                     MessageBox.Show("Заказ добавлен");
@@ -83,7 +86,7 @@ namespace Manufactory
             
             numberOfActualOrders++;
             Values.currentRowIndex++;
-            this.requestNumberTextBox.Text = Values.currentRowIndex.ToString();
+            this.requestNumberTextBox.Text = (Values.currentRowIndex - Values.startRowIndex).ToString();
             this.Enabled = true;
             
 
@@ -99,19 +102,12 @@ namespace Manufactory
             //Пробегаемся по всем объектам коллекции(внутри коллекции объекты нашей формы)
             foreach (Control x in collection)
             {
-                if (x.GetType() == typeof(TextBox))//Рассматриваем пока что только textBox'ы
-                {
                     try
                     {
                         if (String.IsNullOrEmpty(x.Text))//TODO: Сделать проверку на наличие ненужных символов и т.п.
                             throw new FormatException();
 
-                        //TODO: Можно убрать if и оставить только строчку после него
-                        if (Values.tableSheet.GetRow(Values.currentRowIndex).GetCell(Values.numericHeadings[x.AccessibleName]) == null)
                             Values.tableSheet.GetRow(Values.currentRowIndex).CreateCell(Values.numericHeadings[x.AccessibleName]).SetCellValue(Convert.ToDouble(x.Text));
-                        else
-                            Values.tableSheet.GetRow(Values.currentRowIndex).GetCell(Values.numericHeadings[x.AccessibleName]).SetCellValue(Convert.ToDouble(x.Text));
-
 
 
                     }
@@ -133,12 +129,13 @@ namespace Manufactory
                         #region Поиск textBox'a в списке строчных данных (Values.stringHeadings)
                         try
                         {
-                            if (((TextBox)x).Text == null || ((TextBox)x).Text.Equals(String.Empty))
-                                throw new FormatException();
-                            Values.tableSheet.GetRow(Values.currentRowIndex).CreateCell(Values.stringHeadings[x.AccessibleName]).SetCellValue(x.Text);//Если использовать GetCell() вместо CreateCell то независимо от try-catch может выброситься NullReferenceException.
-                            
-                        }
-                        catch (FormatException)// Проверяет, записаны ли данные в виде числа
+                        if (String.IsNullOrEmpty(x.Text))//TODO: Сделать проверку на наличие ненужных символов и т.п.
+                            throw new FormatException();
+
+                        Values.tableSheet.GetRow(Values.currentRowIndex).CreateCell(Values.stringHeadings[x.AccessibleName]).SetCellValue(x.Text);//Если использовать GetCell() вместо CreateCell то независимо от try-catch может выброситься NullReferenceException.
+
+                    }
+                    catch (FormatException)// Проверяет, записаны ли данные в виде числа
                         {
                             MessageBox.Show("Поле " + x.Name + " не заполнено.");
                             success = false;
@@ -156,7 +153,6 @@ namespace Manufactory
                         #endregion
                     }
 
-                }
             }
             return success;
         }
