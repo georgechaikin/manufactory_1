@@ -136,7 +136,7 @@ namespace Manufactory.Additional
                 startRow = tableSheet.GetRow(currentRowIndex);
 
             }
-            startRow = tableSheet.CreateRow(currentRowIndex);
+            //startRow = tableSheet.CreateRow(currentRowIndex);
             #endregion
             MessageBox.Show("Номер последней строки: " + currentRowIndex);
         }
