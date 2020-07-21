@@ -106,11 +106,16 @@ namespace Manufactory
                         if (String.IsNullOrEmpty(x.Text))//TODO: Сделать проверку на наличие ненужных символов и т.п.
                             throw new FormatException();
 
-                        //TODO: Вместо Name лучше использовать AccessibleName, так как при изменении Form через конструктор сбрасываются имена
-                        Values.tableSheet.GetRow(Values.currentRowIndex).CreateCell(Values.numericHeadings[x.AccessibleName]).SetCellValue(Convert.ToDouble(x.Text));
+                        //TODO: Можно убрать if и оставить только строчку после него
+                        if (Values.tableSheet.GetRow(Values.currentRowIndex).GetCell(Values.numericHeadings[x.AccessibleName]) == null)
+                            Values.tableSheet.GetRow(Values.currentRowIndex).CreateCell(Values.numericHeadings[x.AccessibleName]).SetCellValue(Convert.ToDouble(x.Text));
+                        else
+                            Values.tableSheet.GetRow(Values.currentRowIndex).GetCell(Values.numericHeadings[x.AccessibleName]).SetCellValue(Convert.ToDouble(x.Text));
+
 
 
                     }
+                    //catch(NullReferenceException) { MessageBox.Show(x.AccessibleName); }
                     catch (FormatException)// Проверяет, записаны ли данные в виде числа
                     {
                         MessageBox.Show("В текстовой строке для " + x.AccessibleName + " нужно ввести число. Также возможно, что поле не заполнено.");
