@@ -42,26 +42,29 @@
             // pastGridView
             // 
             this.pastGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.pastGridView.Location = new System.Drawing.Point(24, 37);
+            this.pastGridView.Location = new System.Drawing.Point(13, 521);
+            this.pastGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pastGridView.Name = "pastGridView";
-            this.pastGridView.Size = new System.Drawing.Size(764, 150);
+            this.pastGridView.Size = new System.Drawing.Size(1328, 347);
             this.pastGridView.TabIndex = 0;
             // 
             // actualGridView
             // 
             this.actualGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.actualGridView.Location = new System.Drawing.Point(24, 243);
+            this.actualGridView.Location = new System.Drawing.Point(13, 58);
+            this.actualGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.actualGridView.Name = "actualGridView";
-            this.actualGridView.Size = new System.Drawing.Size(764, 150);
+            this.actualGridView.Size = new System.Drawing.Size(1328, 361);
             this.actualGridView.TabIndex = 1;
             // 
             // lastOrdersLabel
             // 
             this.lastOrdersLabel.AutoSize = true;
             this.lastOrdersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.lastOrdersLabel.Location = new System.Drawing.Point(307, 9);
+            this.lastOrdersLabel.Location = new System.Drawing.Point(571, 452);
+            this.lastOrdersLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lastOrdersLabel.Name = "lastOrdersLabel";
-            this.lastOrdersLabel.Size = new System.Drawing.Size(187, 25);
+            this.lastOrdersLabel.Size = new System.Drawing.Size(269, 35);
             this.lastOrdersLabel.TabIndex = 4;
             this.lastOrdersLabel.Text = "Прошлые Заказы";
             // 
@@ -69,9 +72,10 @@
             // 
             this.actualOrdersLabel.AutoSize = true;
             this.actualOrdersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.actualOrdersLabel.Location = new System.Drawing.Point(307, 215);
+            this.actualOrdersLabel.Location = new System.Drawing.Point(519, 18);
+            this.actualOrdersLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.actualOrdersLabel.Name = "actualOrdersLabel";
-            this.actualOrdersLabel.Size = new System.Drawing.Size(212, 25);
+            this.actualOrdersLabel.Size = new System.Drawing.Size(304, 35);
             this.actualOrdersLabel.TabIndex = 3;
             this.actualOrdersLabel.Text = "Актуальные Заказы";
             // 
@@ -81,13 +85,14 @@
             // 
             // OrderListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1354, 882);
             this.Controls.Add(this.lastOrdersLabel);
             this.Controls.Add(this.actualOrdersLabel);
             this.Controls.Add(this.actualGridView);
             this.Controls.Add(this.pastGridView);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "OrderListForm";
             this.Text = "OrderListForm";
             ((System.ComponentModel.ISupportInitialize)(this.pastGridView)).EndInit();
