@@ -703,7 +703,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1454, 1038);
+            this.ClientSize = new System.Drawing.Size(1478, 1038);
             this.Controls.Add(this.label35);
             this.Controls.Add(this.label34);
             this.Controls.Add(this.label33);
@@ -767,6 +767,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(1500, 1018);
             this.Name = "NewCardOrder";
             this.Text = "NewCardOrder";
             this.ResumeLayout(false);
