@@ -177,7 +177,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label12.Location = new System.Drawing.Point(962, 466);
+            this.label12.Location = new System.Drawing.Point(1123, 431);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(133, 29);
@@ -188,7 +188,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label11.Location = new System.Drawing.Point(430, 466);
+            this.label11.Location = new System.Drawing.Point(430, 426);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(214, 29);
@@ -309,7 +309,7 @@
             // textBox9
             // 
             this.textBox9.AccessibleName = "Сварочная работа/Стоимость";
-            this.textBox9.Location = new System.Drawing.Point(1256, 1032);
+            this.textBox9.Location = new System.Drawing.Point(1256, 801);
             this.textBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(148, 26);
@@ -318,7 +318,7 @@
             // textBox10
             // 
             this.textBox10.AccessibleName = "Слесарная обработка/Стоимость";
-            this.textBox10.Location = new System.Drawing.Point(1256, 886);
+            this.textBox10.Location = new System.Drawing.Point(1256, 711);
             this.textBox10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(148, 26);
@@ -327,7 +327,7 @@
             // textBox11
             // 
             this.textBox11.AccessibleName = "Токарные работы/Стоимость";
-            this.textBox11.Location = new System.Drawing.Point(1256, 745);
+            this.textBox11.Location = new System.Drawing.Point(1256, 628);
             this.textBox11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(148, 26);
@@ -336,7 +336,7 @@
             // textBox12
             // 
             this.textBox12.AccessibleName = "Фрезерование/Стоимость";
-            this.textBox12.Location = new System.Drawing.Point(1256, 605);
+            this.textBox12.Location = new System.Drawing.Point(1256, 548);
             this.textBox12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(148, 26);
@@ -345,7 +345,7 @@
             // textBox13
             // 
             this.textBox13.AccessibleName = "Сварочная работа/Время";
-            this.textBox13.Location = new System.Drawing.Point(1000, 1032);
+            this.textBox13.Location = new System.Drawing.Point(1004, 799);
             this.textBox13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(148, 26);
@@ -354,7 +354,7 @@
             // textBox14
             // 
             this.textBox14.AccessibleName = "Слесарная обработка/Время";
-            this.textBox14.Location = new System.Drawing.Point(1000, 886);
+            this.textBox14.Location = new System.Drawing.Point(1000, 711);
             this.textBox14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(148, 26);
@@ -363,7 +363,7 @@
             // textBox15
             // 
             this.textBox15.AccessibleName = "Токарные работы/Время";
-            this.textBox15.Location = new System.Drawing.Point(1000, 745);
+            this.textBox15.Location = new System.Drawing.Point(1004, 628);
             this.textBox15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(148, 26);
@@ -372,7 +372,7 @@
             // textBox16
             // 
             this.textBox16.AccessibleName = "Фрезерование/Время";
-            this.textBox16.Location = new System.Drawing.Point(1000, 605);
+            this.textBox16.Location = new System.Drawing.Point(1000, 547);
             this.textBox16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(148, 26);
@@ -381,7 +381,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(1276, 529);
+            this.label13.Location = new System.Drawing.Point(1275, 503);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(107, 20);
@@ -391,7 +391,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(928, 1037);
+            this.label14.Location = new System.Drawing.Point(932, 804);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 20);
@@ -402,7 +402,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label15.Location = new System.Drawing.Point(928, 952);
+            this.label15.Location = new System.Drawing.Point(931, 760);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(174, 25);
@@ -412,7 +412,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(932, 891);
+            this.label16.Location = new System.Drawing.Point(932, 716);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(58, 20);
@@ -422,7 +422,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(928, 749);
+            this.label17.Location = new System.Drawing.Point(932, 632);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(58, 20);
@@ -433,7 +433,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label18.Location = new System.Drawing.Point(928, 817);
+            this.label18.Location = new System.Drawing.Point(927, 674);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(231, 25);
@@ -444,7 +444,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label19.Location = new System.Drawing.Point(928, 680);
+            this.label19.Location = new System.Drawing.Point(927, 596);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(235, 25);
@@ -454,7 +454,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(932, 609);
+            this.label20.Location = new System.Drawing.Point(932, 551);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(58, 20);
@@ -465,7 +465,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label21.Location = new System.Drawing.Point(928, 529);
+            this.label21.Location = new System.Drawing.Point(927, 503);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(275, 25);
@@ -475,7 +475,7 @@
             // weldingCostTextBox
             // 
             this.weldingCostTextBox.AccessibleName = "Под.работы/Сварка/Стоимость";
-            this.weldingCostTextBox.Location = new System.Drawing.Point(666, 1029);
+            this.weldingCostTextBox.Location = new System.Drawing.Point(667, 817);
             this.weldingCostTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.weldingCostTextBox.Name = "weldingCostTextBox";
             this.weldingCostTextBox.Size = new System.Drawing.Size(148, 26);
@@ -484,7 +484,7 @@
             // locksmithCostTextBox
             // 
             this.locksmithCostTextBox.AccessibleName = "Под.работы/Слесарка/Стоимость";
-            this.locksmithCostTextBox.Location = new System.Drawing.Point(666, 883);
+            this.locksmithCostTextBox.Location = new System.Drawing.Point(666, 720);
             this.locksmithCostTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.locksmithCostTextBox.Name = "locksmithCostTextBox";
             this.locksmithCostTextBox.Size = new System.Drawing.Size(148, 26);
@@ -493,7 +493,7 @@
             // latheCostTextBox
             // 
             this.latheCostTextBox.AccessibleName = "Под.работы/Токарка/Стоимость";
-            this.latheCostTextBox.Location = new System.Drawing.Point(666, 742);
+            this.latheCostTextBox.Location = new System.Drawing.Point(667, 630);
             this.latheCostTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.latheCostTextBox.Name = "latheCostTextBox";
             this.latheCostTextBox.Size = new System.Drawing.Size(148, 26);
@@ -502,7 +502,7 @@
             // millingCostTextBox
             // 
             this.millingCostTextBox.AccessibleName = "Под.работы/Фрезеровка/Стоимость";
-            this.millingCostTextBox.Location = new System.Drawing.Point(666, 602);
+            this.millingCostTextBox.Location = new System.Drawing.Point(666, 531);
             this.millingCostTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.millingCostTextBox.Name = "millingCostTextBox";
             this.millingCostTextBox.Size = new System.Drawing.Size(148, 26);
@@ -511,16 +511,17 @@
             // weldingTimeTextBox
             // 
             this.weldingTimeTextBox.AccessibleName = "Под.работы/Сварка/Время";
-            this.weldingTimeTextBox.Location = new System.Drawing.Point(411, 1029);
+            this.weldingTimeTextBox.Location = new System.Drawing.Point(412, 817);
             this.weldingTimeTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.weldingTimeTextBox.Name = "weldingTimeTextBox";
             this.weldingTimeTextBox.Size = new System.Drawing.Size(148, 26);
             this.weldingTimeTextBox.TabIndex = 81;
+            this.weldingTimeTextBox.Text = "ф";
             // 
             // locksmithTimeTextBox
             // 
             this.locksmithTimeTextBox.AccessibleName = "Под.работы/Слесарка/Время";
-            this.locksmithTimeTextBox.Location = new System.Drawing.Point(411, 883);
+            this.locksmithTimeTextBox.Location = new System.Drawing.Point(411, 720);
             this.locksmithTimeTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.locksmithTimeTextBox.Name = "locksmithTimeTextBox";
             this.locksmithTimeTextBox.Size = new System.Drawing.Size(148, 26);
@@ -529,7 +530,7 @@
             // latheTimeTextBox
             // 
             this.latheTimeTextBox.AccessibleName = "Под.работы/Токарка/Время";
-            this.latheTimeTextBox.Location = new System.Drawing.Point(411, 742);
+            this.latheTimeTextBox.Location = new System.Drawing.Point(412, 630);
             this.latheTimeTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.latheTimeTextBox.Name = "latheTimeTextBox";
             this.latheTimeTextBox.Size = new System.Drawing.Size(148, 26);
@@ -538,7 +539,7 @@
             // millingTimeTextBox
             // 
             this.millingTimeTextBox.AccessibleName = "Под.работы/Фрезеровка/Время";
-            this.millingTimeTextBox.Location = new System.Drawing.Point(411, 602);
+            this.millingTimeTextBox.Location = new System.Drawing.Point(412, 531);
             this.millingTimeTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.millingTimeTextBox.Name = "millingTimeTextBox";
             this.millingTimeTextBox.Size = new System.Drawing.Size(148, 26);
@@ -547,17 +548,18 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(687, 526);
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label22.Location = new System.Drawing.Point(651, 465);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(107, 20);
+            this.label22.Size = new System.Drawing.Size(202, 36);
             this.label22.TabIndex = 77;
             this.label22.Text = "СТОИМОСТЬ";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(339, 1034);
+            this.label23.Location = new System.Drawing.Point(342, 820);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(58, 20);
@@ -568,7 +570,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.label24.Location = new System.Drawing.Point(339, 949);
+            this.label24.Location = new System.Drawing.Point(340, 764);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(120, 35);
@@ -578,7 +580,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(342, 888);
+            this.label25.Location = new System.Drawing.Point(342, 725);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(58, 20);
@@ -588,7 +590,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(339, 746);
+            this.label26.Location = new System.Drawing.Point(340, 634);
             this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(58, 20);
@@ -599,7 +601,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.label27.Location = new System.Drawing.Point(339, 814);
+            this.label27.Location = new System.Drawing.Point(340, 678);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(155, 35);
@@ -610,7 +612,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.label28.Location = new System.Drawing.Point(339, 677);
+            this.label28.Location = new System.Drawing.Point(340, 576);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(134, 35);
@@ -620,7 +622,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(342, 606);
+            this.label29.Location = new System.Drawing.Point(342, 534);
             this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(58, 20);
@@ -631,7 +633,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.label30.Location = new System.Drawing.Point(339, 526);
+            this.label30.Location = new System.Drawing.Point(340, 467);
             this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(191, 35);
@@ -703,7 +705,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1478, 1038);
+            this.ClientSize = new System.Drawing.Size(1478, 962);
             this.Controls.Add(this.label35);
             this.Controls.Add(this.label34);
             this.Controls.Add(this.label33);
@@ -766,6 +768,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MinimumSize = new System.Drawing.Size(1500, 1018);
             this.Name = "NewCardOrder";
