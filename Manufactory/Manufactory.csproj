@@ -68,6 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Additional\HeadingData.cs" />
+    <Compile Include="Additional\SpecialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AddOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>

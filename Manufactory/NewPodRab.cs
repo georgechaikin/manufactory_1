@@ -7,16 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Manufactory.Additional;
 
 namespace Manufactory
 {
-    public partial class NewPodRab : Form
+    public partial class NewPodRab : SpecialForm
     {
-        Form parentForm;
-        public NewPodRab(Form parentForm)
+        //Form parentForm;
+        public NewPodRab()
         {
             this.ControlBox = false;
-            this.parentForm = parentForm;
+            //this.parentForm = parentForm;
             InitializeComponent();
         }
 
@@ -32,8 +33,19 @@ namespace Manufactory
 
         private void hideForm(object sender, EventArgs e)
         {
-            this.parentForm.Enabled = true;
+            //this.parentForm.Enabled = true;
+            Program.forms["Add Order Form"].Enabled = true;
             this.Hide();
+        }
+        public override void updateData()
+        {
+            foreach(Control x in this.Controls)
+                switch (x)
+                {
+                    case TextBox textBox:
+                        textBox.Text = String.Empty;
+                        break;
+                }
         }
     }
 }

@@ -15,20 +15,20 @@ namespace Manufactory
     /// Форма с двумя таблицами: список актуальных заказов и список прошлых заказов.
     /// Кол-во выводимых заказов зависит от значений переменных numberOfActualOrders и numberOfPastOrders
     /// </summary>
-    public partial class OrderListForm : Form
+    public partial class OrderListForm : SpecialForm
     {
-        private int numberOfActualOrders;
-        private int numberOfPastOrders;
-        private Form mainForm;
-        public OrderListForm(Form mainForm, int numberOfActualOrders, int numberOfPastOrders)
+        //private int numberOfActualOrders;
+        //private int numberOfPastOrders;
+        //private Form mainForm;
+        public OrderListForm()
         {
-            this.mainForm = mainForm;
-            this.numberOfActualOrders = numberOfActualOrders;
-            this.numberOfPastOrders = numberOfPastOrders;
+            //this.mainForm = mainForm;
+            //this.numberOfActualOrders = numberOfActualOrders;
+            //this.numberOfPastOrders = numberOfPastOrders;
             InitializeComponent();
             this.actualGridView.AllowUserToAddRows = false;//Пока запретим редактировать заказы в этой форме
             this.pastGridView.AllowUserToAddRows = false;
-            this.FormClosed += new FormClosedEventHandler(this.enableMainForm);
+            //this.FormClosed += new FormClosedEventHandler(this.enableMainForm);
             loadOrderLists();
         }
         /// <summary>
@@ -50,12 +50,12 @@ namespace Manufactory
             }
 
             //Вычитаем из i эти значения в методе setCellValue, чтобы заполнять соответствующие таблицы с нужного индекса (чтобы не выходить за рамки существующих строк)
-            int actualBeginIndex = Values.currentRowIndex - numberOfActualOrders;
-            int pastBeginIndex = Values.currentRowIndex - numberOfActualOrders - numberOfPastOrders;
+            int actualBeginIndex = Values.currentRowIndex - Values.numberOfActualOrders;
+            int pastBeginIndex = Values.currentRowIndex - Values.numberOfActualOrders - Values.numberOfPastOrders;
 
             //Заполняем actualGridView
             //TODO: Добавить условие на считывание за пределами данных
-            for (int i = Values.currentRowIndex - numberOfActualOrders; i < Values.currentRowIndex; i++)
+            for (int i = Values.currentRowIndex - Values.numberOfActualOrders; i < Values.currentRowIndex; i++)
             {
                 if (i < Values.startRowIndex)
                 {
@@ -69,7 +69,7 @@ namespace Manufactory
                 }
             }
             //Заполняем pastGridView
-            for (int i = Values.currentRowIndex - numberOfActualOrders - numberOfPastOrders; i < Values.currentRowIndex - numberOfActualOrders; i++)
+            for (int i = Values.currentRowIndex - Values.numberOfActualOrders - Values.numberOfPastOrders; i < Values.currentRowIndex - Values.numberOfActualOrders; i++)
             {
                 if (i < Values.startRowIndex)
                 {
@@ -120,7 +120,24 @@ namespace Manufactory
         /// </summary>
         private void enableMainForm(object sender, FormClosedEventArgs e)
         {
-            this.mainForm.Enabled = true;
+            //this.mainForm.Enabled = true;
+        }
+
+        private void openNewAddForm(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Program.forms["Add Order Form"].Show();
+            //Program.forms["Main Form"].Hide();
+        }
+        public override void updateData()
+        {
+            actualGridView.Rows.Clear();
+            actualGridView.Refresh();
+
+            pastGridView.Rows.Clear();
+            pastGridView.Refresh();
+
+            loadOrderLists();
         }
     }
 }

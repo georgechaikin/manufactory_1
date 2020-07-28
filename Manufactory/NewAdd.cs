@@ -13,20 +13,20 @@ using System.Windows.Forms;
 
 namespace Manufactory
 {
-    public partial class NewAdd : Form
+    public partial class NewAdd : SpecialForm
     {
         private NewVidRab vidRab;
         private NewPodRab podRab;
         private int numberOfActualOrders;
         public NewAdd()
         {
-            this.vidRab = new NewVidRab(this);
-            this.podRab = new NewPodRab(this);
+            //this.vidRab = new NewVidRab(this);
+            //this.podRab = new NewPodRab(this);
             numberOfActualOrders = 0;
             InitializeComponent();
             this.requestNumberTextBox.Text = (Values.currentRowIndex-Values.startRowIndex).ToString();
             this.requestNumberTextBox.ReadOnly = true;
-
+            this.FormClosing+=new FormClosingEventHandler(openMainForm);
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,6 +39,24 @@ namespace Manufactory
 
         }
         /// <summary>
+        /// Применяется при нажатии на крестик
+        /// </summary>
+        private void openMainForm(object sender, FormClosingEventArgs e)
+        {
+            //this.mainForm.Enabled = true;
+           
+            Program.forms["Main Form"].updateData();
+            Program.forms["Add Order Form"].updateData();
+            //Program.forms["Add Order Form"].Enabled=false;
+            Program.forms["Pod Rab Form"].updateData();
+            Program.forms["Vid Rab Form"].updateData();
+            Program.forms["Main Form"].Enabled = true;
+            e.Cancel = true;
+            this.Hide();
+            //Program.forms["Main Form"].Show();
+
+        }
+        /// <summary>
         /// Открывает окно для доп. информации (Подготовительные работы)
         /// </summary>
         /// <param name="sender"></param>
@@ -46,7 +64,8 @@ namespace Manufactory
         private void openPodRab(object sender, EventArgs e)//TODO: Узнать, удаляет ли GC Формы после нажатия на крестик
         {
             this.Enabled = false;
-            podRab.Show();
+            //podRab.Show();
+            Program.forms["Pod Rab Form"].Show();
         }
         /// <summary>
         /// Открывает окно для доп. информации (Вид работ)
@@ -57,7 +76,8 @@ namespace Manufactory
         {
             {
                 this.Enabled = false;
-                vidRab.Show();
+                //vidRab.Show();
+                Program.forms["Vid Rab Form"].Show();
             }
         }
 
@@ -72,8 +92,8 @@ namespace Manufactory
             if (Values.tableSheet.GetRow(Values.currentRowIndex) == null)
                 Values.tableSheet.CreateRow(Values.currentRowIndex);
             bool newAddSuccess = addCellsFromCollection(this.Controls);
-            bool vidRabSuccess = addCellsFromCollection(this.vidRab.Controls);
-            bool podRabSuccess = addCellsFromCollection(this.podRab.Controls);
+            bool vidRabSuccess = addCellsFromCollection(Program.forms["Vid Rab Form"].Controls);
+            bool podRabSuccess = addCellsFromCollection(Program.forms["Pod Rab Form"].Controls);
 
 
             //TODO: Найти более правильный способ избежать повреждения файла (в данный момент используется FileMode.Create вместо FileMode.Open)
@@ -84,11 +104,10 @@ namespace Manufactory
                     MessageBox.Show("Заказ добавлен");
                 }
             
-            numberOfActualOrders++;
+            Values.numberOfActualOrders++;
             Values.currentRowIndex++;
             this.requestNumberTextBox.Text = (Values.currentRowIndex - Values.startRowIndex).ToString();
             this.Enabled = true;
-            
 
         }
 
@@ -164,15 +183,31 @@ namespace Manufactory
         private void showCard(object sender, EventArgs e)
         {
             this.Enabled = false;
-            NewCardOrder cardOrderForm = new NewCardOrder(new Form[] { this, this.vidRab, this.podRab });
-            cardOrderForm.Show();
+            //NewCardOrder cardOrderForm = new NewCardOrder(new Form[] { this, this.vidRab, this.podRab });
+            //Program.forms["Card Form"] = new NewCardOrder(new Form[] { Program.forms["Add Order Form"], Program.forms["Pod Rab Form"], Program.forms["Vid Rab Form"] });
+            Program.forms["Card Form"].updateData();
+            Program.forms["Card Form"].Show();
+            //cardOrderForm.Show();
 
         }
         private void showOrderList(object sender, EventArgs e)
         {
-            this.Enabled = false;
-            OrderListForm orderListForm = new OrderListForm(this,numberOfActualOrders, 5);
-            orderListForm.Show();
+            //this.Enabled = false;
+            //OrderListForm orderListForm = new OrderListForm(this,Values.numberOfActualOrders, 5);
+            //orderListForm.Show();
+        }
+        public override void updateData()
+        {
+            foreach (Control x in this.Controls)
+                switch (x)
+                {
+                    case TextBox textBox:
+                        textBox.Text = String.Empty;
+                        break;
+                    case ComboBox comboBox:
+                        comboBox.Text = String.Empty;
+                        break;
+                }
         }
     }
 

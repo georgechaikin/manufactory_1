@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Manufactory.Additional;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,20 +12,32 @@ using System.Windows.Forms;
 
 namespace Manufactory
 {
-    public partial class NewVidRab : Form
+    public partial class NewVidRab : SpecialForm
     {
-        Form parentForm;
-        public NewVidRab(Form parentForm)
+        //Form parentForm;
+        public NewVidRab()
         {
-            this.parentForm = parentForm;
+            //this.parentForm = parentForm;
             InitializeComponent();
             this.ControlBox = false;
         }
 
         private void hideForm(object sender, EventArgs e)
         {
-            this.parentForm.Enabled = true;
+            //this.parentForm.Enabled = true;
+            Program.forms["Add Order Form"].Enabled = true;
             this.Hide();
         }
+        public override void updateData()
+        {
+            foreach (Control x in this.Controls)
+                switch (x)
+                {
+                    case TextBox textBox:
+                        textBox.Text = String.Empty;
+                        break;
+                }
+        }
     }
+
 }

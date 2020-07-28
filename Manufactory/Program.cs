@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace Manufactory
 {
     static class Program
-    { 
+    {
 
         /// <summary>
         /// Здесь происходит запуск основной формы. Также здесь создаётся экземпляр класса Values.
@@ -17,6 +17,7 @@ namespace Manufactory
         /// Чтобы правильно считывать с TextBox'ов данные, им заданы AccessibleName, которые соответствуют
         /// названию определённого заголовка в Values.
         /// </summary>
+        public static Dictionary<string, SpecialForm> forms;
         [STAThread]
         static void Main()
         {
@@ -26,7 +27,15 @@ namespace Manufactory
 
             //Кол-во столбцов и их названия пока регулируются в конструкторе Values
             Values values = new Values("Таблица заказов.xlsx", "Входящие");
-            Application.Run(new NewAdd());
+            Values.loadTable();
+            forms = new Dictionary<string, SpecialForm>();
+            forms.Add("Main Form", new OrderListForm());
+            forms.Add("Add Order Form", new NewAdd());
+            forms.Add("Pod Rab Form", new NewPodRab());
+            forms.Add("Vid Rab Form", new NewVidRab());
+            forms.Add("Card Form", new NewCardOrder(new Form[] { forms["Add Order Form"],forms["Pod Rab Form"],forms["Vid Rab Form"] }));
+            //forms["Add Order Form"].Enabled = false;
+            Application.Run(forms["Main Form"]);
         }
     }
 }

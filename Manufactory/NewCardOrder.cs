@@ -11,9 +11,8 @@ using System.Windows.Forms;
 
 namespace Manufactory
 {
-    public partial class NewCardOrder : Form
+    public partial class NewCardOrder : SpecialForm
     {
-        Dictionary<string, Control> headingTextBoxPair;
         Form[] forms;
         public NewCardOrder(Form[] forms)
         {
@@ -22,7 +21,7 @@ namespace Manufactory
             this.FormClosed += new FormClosedEventHandler(this.enableMainForm);
             setHeadingTextBoxPair();
             loadCard(forms);
-            
+
         }
 
         private void loadCard(Form[] forms)
@@ -40,7 +39,7 @@ namespace Manufactory
                     catch (ArgumentNullException) { continue; }
                 }
         }
-        private void setHeadingTextBoxPair()
+        protected override void setHeadingTextBoxPair()
         {
             headingTextBoxPair = new Dictionary<string, Control>();
             foreach (Control x in this.Controls)
@@ -67,7 +66,12 @@ namespace Manufactory
         /// </summary>
         private void enableMainForm(object sender, FormClosedEventArgs e)
         {
-            this.forms[0].Enabled = true;//TODO: Не факт, что форма, с которой вызвали NewCardOrder, будет в начале массива. Так что желательно бы сделать более удобный способ обращения к нужному Form.
+            //this.forms[0].Enabled = true;//TODO: Не факт, что форма, с которой вызвали NewCardOrder, будет в начале массива. Так что желательно бы сделать более удобный способ обращения к нужному Form.
+            Program.forms["Add Order Form"].Enabled = true;
+        }
+        public override void updateData()
+        {
+            loadCard(forms);
         }
     }
 

@@ -49,6 +49,14 @@ namespace Manufactory.Additional
         /// Лист в файле, с которым производится работа
         /// </summary>
         public static ISheet tableSheet;
+        /// <summary>
+        /// Кол-во заказов, необходимых для отображения в таблице актуальных заказов
+        /// </summary>
+        public static int numberOfActualOrders;
+        /// <summary>
+        /// Кол-во заказов, необходимых для отображения в таблице прошлых заказов
+        /// </summary>
+        public static int numberOfPastOrders;
 
         public Values(string tablePath, string TableName)
         {
@@ -60,7 +68,8 @@ namespace Manufactory.Additional
             numericHeadings = new Dictionary<string, int>();
             stringHeadings = new Dictionary<string, int>();
             headings = new Dictionary<string, int>();
-
+            numberOfActualOrders = 0;
+            numberOfPastOrders = 5;
 
             //Пока headings будет заполняться вручную
             numericHeadings["Номер заявки"] = 0;
@@ -92,13 +101,13 @@ namespace Manufactory.Additional
 
             headings = numericHeadings.Union(stringHeadings).ToDictionary(s=>s.Key,s=>s.Value);
             
-            loadTable();
+            //loadTable();
 
         }
         /// <summary>
         /// Загружает таблицу
         /// </summary>
-        private static void loadTable()
+        public static void loadTable()
         {
             #region Открываем xlsx файл
             if (!File.Exists(path))
