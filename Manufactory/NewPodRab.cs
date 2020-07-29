@@ -18,9 +18,13 @@ namespace Manufactory
             this.ControlBox = false;
             InitializeComponent();
             this.textBox5.ReadOnly = true;
+            this.textBox5.Text = 0.ToString();
             this.textBox6.ReadOnly = true;
+            this.textBox6.Text = 0.ToString();
             this.textBox7.ReadOnly = true;
+            this.textBox7.Text = 0.ToString();
             this.textBox8.ReadOnly = true;
+            this.textBox8.Text = 0.ToString();
             this.textBox1.TextChanged += (sender, e) => showCost(sender, e, textBox1, textBox5, 17);
             this.textBox2.TextChanged += (sender, e) => showCost(sender, e, textBox2, textBox6, 15.5);
             this.textBox3.TextChanged += (sender, e) => showCost(sender, e, textBox3, textBox7, 12);
@@ -39,11 +43,11 @@ namespace Manufactory
 
         private void hideForm(object sender, EventArgs e)
         {
-            //this.parentForm.Enabled = true;
             Program.forms["Add Order Form"].Enabled = true;
+            Program.forms["Add Order Form"].updateData();
             this.Hide();
         }
-        public override void updateData()
+        public override void resetData()
         {
             foreach (Control x in this.Controls)
                 switch (x)
@@ -52,6 +56,10 @@ namespace Manufactory
                         textBox.Text = String.Empty;
                         break;
                 }
+        }
+        public override void updateData()
+        {
+            throw new NotImplementedException();
         }
         protected void showCost(object sender, EventArgs e, Control inputControl, Control outputControl, double price)//TODO: Поменять на decimal
         {
@@ -62,7 +70,7 @@ namespace Manufactory
             }
             catch (FormatException)
             {
-                outputControl.Text = String.Empty;
+                outputControl.Text = 0.ToString();
             }
         }
     }

@@ -57,6 +57,8 @@
             this.materialCostTextBox = new System.Windows.Forms.TextBox();
             this.productTypeComboBox = new System.Windows.Forms.ComboBox();
             this.showOrderListButon = new System.Windows.Forms.Button();
+            this.totalCostHeading = new System.Windows.Forms.Label();
+            this.totalCostLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // showCardButton
@@ -330,12 +332,33 @@
             this.showOrderListButon.UseVisualStyleBackColor = true;
             this.showOrderListButon.Click += new System.EventHandler(this.showOrderList);
             // 
+            // totalCostHeading
+            // 
+            this.totalCostHeading.AutoSize = true;
+            this.totalCostHeading.Location = new System.Drawing.Point(277, 142);
+            this.totalCostHeading.Name = "totalCostHeading";
+            this.totalCostHeading.Size = new System.Drawing.Size(153, 13);
+            this.totalCostHeading.TabIndex = 29;
+            this.totalCostHeading.Text = "Итоговая стоимость (рубль):";
+            // 
+            // totalCostLabel
+            //
+            this.totalCostLabel.AccessibleName = "Итоговая стоимость";
+            this.totalCostLabel.AutoSize = true;
+            this.totalCostLabel.Location = new System.Drawing.Point(281, 168);
+            this.totalCostLabel.Name = "totalCostLabel";
+            this.totalCostLabel.Size = new System.Drawing.Size(13, 13);
+            this.totalCostLabel.TabIndex = 30;
+            this.totalCostLabel.Text = "0";
+            // 
             // NewAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(466, 621);
+            this.Controls.Add(this.totalCostLabel);
+            this.Controls.Add(this.totalCostHeading);
             this.Controls.Add(this.showOrderListButon);
             this.Controls.Add(this.materialCostTextBox);
             this.Controls.Add(this.materialSizeTextBox);
@@ -404,5 +427,7 @@
         private System.Windows.Forms.ComboBox productTypeComboBox;
         private System.Windows.Forms.Button showCardButton;
         private System.Windows.Forms.Button showOrderListButon;
+        private System.Windows.Forms.Label totalCostHeading;
+        private System.Windows.Forms.Label totalCostLabel;
     }
 }

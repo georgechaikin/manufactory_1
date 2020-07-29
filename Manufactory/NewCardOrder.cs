@@ -19,7 +19,7 @@ namespace Manufactory
         {
             InitializeComponent();
             this.forms = forms;
-            this.FormClosed += new FormClosedEventHandler(this.enableMainForm);
+            this.FormClosing += new FormClosingEventHandler(this.enableMainForm);
             setHeadingTextBoxPair();
             loadCard(forms);
 
@@ -65,14 +65,20 @@ namespace Manufactory
         /// <summary>
         /// Применяется при нажатии на крестик
         /// </summary>
-        private void enableMainForm(object sender, FormClosedEventArgs e)
+        private void enableMainForm(object sender, FormClosingEventArgs e)
         {
             //this.forms[0].Enabled = true;//TODO: Не факт, что форма, с которой вызвали NewCardOrder, будет в начале массива. Так что желательно бы сделать более удобный способ обращения к нужному Form.
             Program.forms["Add Order Form"].Enabled = true;
+            e.Cancel = true;
+            this.Hide();
+        }
+        public override void resetData()
+        {
+            loadCard(forms);
         }
         public override void updateData()
         {
-            loadCard(forms);
+            throw new NotImplementedException();
         }
     }
 

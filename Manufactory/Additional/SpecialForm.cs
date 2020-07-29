@@ -14,7 +14,11 @@ namespace Manufactory.Additional
     {
         protected Dictionary<String, Control> headingTextBoxPair;
         /// <summary>
-        /// Обновляет определённые компоненты в экземпляре класса 
+        /// Сбрасывает определённые компоненты в экземпляре класса 
+        /// </summary>
+        public abstract void resetData();
+        /// <summary>
+        /// Обновляет определённые компоненты в экземпляре класса
         /// </summary>
         public abstract void updateData();
         /// <summary>

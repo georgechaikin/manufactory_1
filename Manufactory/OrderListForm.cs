@@ -131,7 +131,7 @@ namespace Manufactory
             Program.forms["Add Order Form"].Show();
             //Program.forms["Main Form"].Hide();
         }
-        public override void updateData()
+        public override void resetData()
         {
             actualGridView.Rows.Clear();
             actualGridView.Refresh();
@@ -140,6 +140,10 @@ namespace Manufactory
             pastGridView.Refresh();
 
             loadOrderLists();
+        }
+        public override void updateData()
+        {
+            throw new NotImplementedException();
         }
     }
 }

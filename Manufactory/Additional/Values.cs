@@ -58,7 +58,7 @@ namespace Manufactory.Additional
         /// </summary>
         public static int numberOfPastOrders;
 
-        public Values(string tablePath, string TableName)
+        public Values(string tablePath, string TableName)//TODO: добавить параметры данных для других полей
         {
             startRowIndex = 4;//TODO: Потом прописать автоматический поиск стартовой строки
             currentRowIndex = 4;
@@ -74,12 +74,12 @@ namespace Manufactory.Additional
             //Пока headings будет заполняться вручную
             numericHeadings["Номер заявки"] = 0;
             stringHeadings["Заказчик"] = 1;
-            stringHeadings["Изделие/Тип заказа"] = 2;//
+            stringHeadings["Изделие/Тип заказа"] = 2;
             stringHeadings["Изделие/Наименование"] = 3;
             numericHeadings["Изделие/Кол-во"] = 4;
-            stringHeadings["Изделие/Вид"] = 5;//
+            stringHeadings["Изделие/Вид"] = 5;
             stringHeadings["Материал/Вид"] = 6;
-            stringHeadings["Материал/Тип"] = 7;//
+            stringHeadings["Материал/Тип"] = 7;
             stringHeadings["Материал/Размеры"] = 8;
             numericHeadings["Материал/Стоимость"] = 9;
             numericHeadings["Под.работы/Фрезеровка/Время"] = 10;
@@ -98,6 +98,8 @@ namespace Manufactory.Additional
             numericHeadings["Слесарная обработка/Стоимость"] = 23;
             numericHeadings["Сварочная работа/Время"] = 24;
             numericHeadings["Сварочная работа/Стоимость"] = 25;
+            numericHeadings["Стоимость 1 шт."] = 26;//
+            numericHeadings["Итоговая стоимость"] = 27;//
 
             headings = numericHeadings.Union(stringHeadings).ToDictionary(s=>s.Key,s=>s.Value);
             

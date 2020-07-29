@@ -18,9 +18,11 @@ namespace Manufactory
         public NewAdd()
         {
             InitializeComponent();
-            this.requestNumberTextBox.Text = (Values.currentRowIndex-Values.startRowIndex).ToString();
+            this.requestNumberTextBox.Text = (Values.currentRowIndex - Values.startRowIndex).ToString();
             this.requestNumberTextBox.ReadOnly = true;
-            this.FormClosing+=new FormClosingEventHandler(openMainForm);
+            this.FormClosing += new FormClosingEventHandler(openMainForm);
+            this.materialCostTextBox.TextChanged += (sender, e) => updateData();
+            this.productNumberTextBox.TextChanged += (sender, e) => updateData();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -37,11 +39,11 @@ namespace Manufactory
         /// </summary>
         private void openMainForm(object sender, FormClosingEventArgs e)
         {
-           
-            Program.forms["Main Form"].updateData();
-            Program.forms["Add Order Form"].updateData();
-            Program.forms["Pod Rab Form"].updateData();
-            Program.forms["Vid Rab Form"].updateData();
+
+            Program.forms["Main Form"].resetData();
+            Program.forms["Add Order Form"].resetData();
+            Program.forms["Pod Rab Form"].resetData();
+            Program.forms["Vid Rab Form"].resetData();
             Program.forms["Main Form"].Enabled = true;
             e.Cancel = true;
             this.Hide();
@@ -65,7 +67,6 @@ namespace Manufactory
         {
             {
                 this.Enabled = false;
-                //vidRab.Show();
                 Program.forms["Vid Rab Form"].Show();
             }
         }
@@ -113,33 +114,33 @@ namespace Manufactory
             //Пробегаемся по всем объектам коллекции(внутри коллекции объекты нашей формы)
             foreach (Control x in collection)
             {
+                try
+                {
+                    if (String.IsNullOrEmpty(x.Text))//TODO: Сделать проверку на наличие ненужных символов и т.п.
+                        throw new FormatException();
+
+                    Values.tableSheet.GetRow(Values.currentRowIndex).CreateCell(Values.numericHeadings[x.AccessibleName]).SetCellValue(Convert.ToDouble(x.Text));
+
+
+                }
+                //catch(NullReferenceException) { MessageBox.Show(x.AccessibleName); }
+                catch (FormatException)// Проверяет, записаны ли данные в виде числа
+                {
+                    MessageBox.Show("В текстовой строке для " + x.AccessibleName + " нужно ввести число. Также возможно, что поле не заполнено.");
+                    success = false;
+                    break;
+                }
+
+                catch (ArgumentNullException)
+                {
+                    continue;
+                }
+
+                catch (KeyNotFoundException)//Если textBox не указан в списке числовых данных, то он ищется уже в списке строчных данных
+                {
+                    #region Поиск textBox'a в списке строчных данных (Values.stringHeadings)
                     try
                     {
-                        if (String.IsNullOrEmpty(x.Text))//TODO: Сделать проверку на наличие ненужных символов и т.п.
-                            throw new FormatException();
-
-                            Values.tableSheet.GetRow(Values.currentRowIndex).CreateCell(Values.numericHeadings[x.AccessibleName]).SetCellValue(Convert.ToDouble(x.Text));
-
-
-                    }
-                    //catch(NullReferenceException) { MessageBox.Show(x.AccessibleName); }
-                    catch (FormatException)// Проверяет, записаны ли данные в виде числа
-                    {
-                        MessageBox.Show("В текстовой строке для " + x.AccessibleName + " нужно ввести число. Также возможно, что поле не заполнено.");
-                        success = false;
-                        break;
-                    }
-
-                    catch (ArgumentNullException)
-                    {
-                        continue;
-                    }
-
-                    catch (KeyNotFoundException)//Если textBox не указан в списке числовых данных, то он ищется уже в списке строчных данных
-                    {
-                        #region Поиск textBox'a в списке строчных данных (Values.stringHeadings)
-                        try
-                        {
                         if (String.IsNullOrEmpty(x.Text))//TODO: Сделать проверку на наличие ненужных символов и т.п.
                             throw new FormatException();
 
@@ -147,22 +148,22 @@ namespace Manufactory
 
                     }
                     catch (FormatException)// Проверяет, записаны ли данные в виде числа
-                        {
-                            MessageBox.Show("Поле " + x.Name + " не заполнено.");
-                            success = false;
-                            break;
-                        }
-                        catch (ArgumentNullException e)
-                        {
-                            MessageBox.Show(e.Message);
-                            continue;
-                        }
-                        catch (KeyNotFoundException)
-                        {
-                            continue;
-                        }
-                        #endregion
+                    {
+                        MessageBox.Show("Поле " + x.Name + " не заполнено.");
+                        success = false;
+                        break;
                     }
+                    catch (ArgumentNullException e)
+                    {
+                        MessageBox.Show(e.Message);
+                        continue;
+                    }
+                    catch (KeyNotFoundException)
+                    {
+                        continue;
+                    }
+                    #endregion
+                }
 
             }
             return success;
@@ -175,11 +176,8 @@ namespace Manufactory
         private void showCard(object sender, EventArgs e)
         {
             this.Enabled = false;
-            //NewCardOrder cardOrderForm = new NewCardOrder(new Form[] { this, this.vidRab, this.podRab });
-            //Program.forms["Card Form"] = new NewCardOrder(new Form[] { Program.forms["Add Order Form"], Program.forms["Pod Rab Form"], Program.forms["Vid Rab Form"] });
-            Program.forms["Card Form"].updateData();
+            Program.forms["Card Form"].resetData();
             Program.forms["Card Form"].Show();
-            //cardOrderForm.Show();
 
         }
         private void showOrderList(object sender, EventArgs e)
@@ -188,7 +186,7 @@ namespace Manufactory
             //OrderListForm orderListForm = new OrderListForm(this,Values.numberOfActualOrders, 5);
             //orderListForm.Show();
         }
-        public override void updateData()
+        public override void resetData()
         {
             foreach (Control x in this.Controls)
                 switch (x)
@@ -201,6 +199,55 @@ namespace Manufactory
                         break;
                 }
             this.requestNumberTextBox.Text = (Values.currentRowIndex - Values.startRowIndex).ToString();
+        }
+        public override void updateData()//TODO: сделать подсчёт итоговой стоимости проще
+        {
+            SpecialForm podRabForm = Program.forms["Pod Rab Form"];
+            SpecialForm vidRabForm = Program.forms["Vid Rab Form"];
+            double podRabSum = 0;
+            double vidRabSum = 0;
+            foreach (Control x in podRabForm.Controls)
+                switch (x)
+                {
+                    case TextBox textBox:
+                        try
+                        {
+                            if (textBox.ReadOnly) podRabSum += Convert.ToDouble(textBox.Text);
+                        }
+                        catch (FormatException)
+                        {
+                            continue;
+                        }
+                        break;
+                }
+            foreach (Control x in vidRabForm.Controls)
+                switch (x)
+                {
+                    case TextBox textBox:
+                        try
+                        {
+                            if (textBox.ReadOnly) vidRabSum += Convert.ToDouble(textBox.Text);
+                        }
+                        catch (FormatException)
+                        {
+                            continue;
+                        }
+                        break;
+                }
+            try
+            {
+                this.totalCostLabel.Text = (Convert.ToDouble(this.productNumberTextBox.Text) * Convert.ToDouble(this.materialCostTextBox.Text) + podRabSum+vidRabSum).ToString();
+            }
+            catch(FormatException)
+            {
+                this.totalCostLabel.Text = String.Empty;
+            }
+        }
+        private void updateTotalCost(object sender, EventArgs e)
+        {
+            SpecialForm podRabForm = Program.forms["Pod Rab Form"];
+            SpecialForm vidRabForm = Program.forms["Vid Rab Form"];
+            //this.totalCostLabel.Text = 
         }
     }
 
