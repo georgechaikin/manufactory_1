@@ -13,6 +13,7 @@ namespace Manufactory
 {
     public partial class NewCardOrder : SpecialForm
     {
+        //Dictionary<string, Control> headingTextBoxPair;
         Form[] forms;
         public NewCardOrder(Form[] forms)
         {
