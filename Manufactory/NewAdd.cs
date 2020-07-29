@@ -1,4 +1,5 @@
 ﻿using Manufactory.Additional;
+using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using System;
 using System.Collections.Generic;
@@ -119,7 +120,13 @@ namespace Manufactory
                     if (String.IsNullOrEmpty(x.Text))//TODO: Сделать проверку на наличие ненужных символов и т.п.
                         throw new FormatException();
 
-                    Values.tableSheet.GetRow(Values.currentRowIndex).CreateCell(Values.numericHeadings[x.AccessibleName]).SetCellValue(Convert.ToDouble(x.Text));
+                    //ICellStyle styleDateFormat=Values.workbook.CreateCellStyle();
+                    //styleDateFormat.DataFormat = 8;
+                    //Values.tableSheet.GetRow(Values.currentRowIndex).CreateCell(Values.numericHeadings[x.AccessibleName]).SetCellValue(Convert.ToDouble(x.Text));
+                    Values.tableSheet.GetRow(Values.currentRowIndex).CreateCell(Values.numericHeadings[x.AccessibleName]);
+                    //Values.tableSheet.GetRow(Values.currentRowIndex).GetCell(Values.numericHeadings[x.AccessibleName]).CellStyle=styleDateFormat;
+                    Values.tableSheet.GetRow(Values.currentRowIndex).GetCell(Values.numericHeadings[x.AccessibleName]).SetCellValue(x.Text);
+
 
 
                 }
@@ -145,7 +152,6 @@ namespace Manufactory
                             throw new FormatException();
 
                         Values.tableSheet.GetRow(Values.currentRowIndex).CreateCell(Values.stringHeadings[x.AccessibleName]).SetCellValue(x.Text);//Если использовать GetCell() вместо CreateCell то независимо от try-catch может выброситься NullReferenceException.
-
                     }
                     catch (FormatException)// Проверяет, записаны ли данные в виде числа
                     {
@@ -204,15 +210,15 @@ namespace Manufactory
         {
             SpecialForm podRabForm = Program.forms["Pod Rab Form"];
             SpecialForm vidRabForm = Program.forms["Vid Rab Form"];
-            double podRabSum = 0;
-            double vidRabSum = 0;
+            decimal podRabSum = 0;
+            decimal vidRabSum = 0;
             foreach (Control x in podRabForm.Controls)
                 switch (x)
                 {
                     case TextBox textBox:
                         try
                         {
-                            if (textBox.ReadOnly) podRabSum += Convert.ToDouble(textBox.Text);
+                            if (textBox.ReadOnly) podRabSum += Convert.ToDecimal(textBox.Text);
                         }
                         catch (FormatException)
                         {
@@ -226,7 +232,7 @@ namespace Manufactory
                     case TextBox textBox:
                         try
                         {
-                            if (textBox.ReadOnly) vidRabSum += Convert.ToDouble(textBox.Text);
+                            if (textBox.ReadOnly) vidRabSum += Convert.ToDecimal(textBox.Text);
                         }
                         catch (FormatException)
                         {
@@ -236,7 +242,7 @@ namespace Manufactory
                 }
             try
             {
-                this.totalCostLabel.Text = (Convert.ToDouble(this.productNumberTextBox.Text) * Convert.ToDouble(this.materialCostTextBox.Text) + podRabSum+vidRabSum).ToString();
+                this.totalCostLabel.Text = (Convert.ToDecimal(this.productNumberTextBox.Text) * Convert.ToDecimal(this.materialCostTextBox.Text) + podRabSum+vidRabSum).ToString();
             }
             catch(FormatException)
             {
