@@ -15,14 +15,8 @@ namespace Manufactory
 {
     public partial class NewAdd : SpecialForm
     {
-        private NewVidRab vidRab;
-        private NewPodRab podRab;
-        private int numberOfActualOrders;
         public NewAdd()
         {
-            //this.vidRab = new NewVidRab(this);
-            //this.podRab = new NewPodRab(this);
-            numberOfActualOrders = 0;
             InitializeComponent();
             this.requestNumberTextBox.Text = (Values.currentRowIndex-Values.startRowIndex).ToString();
             this.requestNumberTextBox.ReadOnly = true;
@@ -43,18 +37,14 @@ namespace Manufactory
         /// </summary>
         private void openMainForm(object sender, FormClosingEventArgs e)
         {
-            //this.mainForm.Enabled = true;
            
             Program.forms["Main Form"].updateData();
             Program.forms["Add Order Form"].updateData();
-            //Program.forms["Add Order Form"].Enabled=false;
             Program.forms["Pod Rab Form"].updateData();
             Program.forms["Vid Rab Form"].updateData();
             Program.forms["Main Form"].Enabled = true;
             e.Cancel = true;
             this.Hide();
-            //Program.forms["Main Form"].Show();
-
         }
         /// <summary>
         /// Открывает окно для доп. информации (Подготовительные работы)
@@ -64,7 +54,6 @@ namespace Manufactory
         private void openPodRab(object sender, EventArgs e)//TODO: Узнать, удаляет ли GC Формы после нажатия на крестик
         {
             this.Enabled = false;
-            //podRab.Show();
             Program.forms["Pod Rab Form"].Show();
         }
         /// <summary>
@@ -98,15 +87,18 @@ namespace Manufactory
 
             //TODO: Найти более правильный способ избежать повреждения файла (в данный момент используется FileMode.Create вместо FileMode.Open)
             if (newAddSuccess && vidRabSuccess && podRabSuccess)
+            {
                 using (var fileStream = new FileStream(Values.path, FileMode.Create, FileAccess.Write))
                 {
                     Values.workbook.Write(fileStream);
                     MessageBox.Show("Заказ добавлен");
                 }
-            
-            Values.numberOfActualOrders++;
-            Values.currentRowIndex++;
-            this.requestNumberTextBox.Text = (Values.currentRowIndex - Values.startRowIndex).ToString();
+                Values.numberOfActualOrders++;
+                Values.currentRowIndex++;
+                this.requestNumberTextBox.Text = (Values.currentRowIndex - Values.startRowIndex).ToString();
+            }
+            //else Values.tableSheet.RemoveRow(Values.tableSheet.GetRow(Values.currentRowIndex));
+
             this.Enabled = true;
 
         }
@@ -208,6 +200,7 @@ namespace Manufactory
                         comboBox.Text = String.Empty;
                         break;
                 }
+            this.requestNumberTextBox.Text = (Values.currentRowIndex - Values.startRowIndex).ToString();
         }
     }
 

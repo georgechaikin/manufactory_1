@@ -38,7 +38,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.millingTimeTextBox = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -145,13 +145,13 @@
             this.label10.TabIndex = 9;
             this.label10.Text = "СТОИМОСТЬ";
             // 
-            // millingTimeTextBox
+            // textBox1
             // 
-            this.millingTimeTextBox.AccessibleName = "Под.работы/Фрезеровка/Время";
-            this.millingTimeTextBox.Location = new System.Drawing.Point(75, 121);
-            this.millingTimeTextBox.Name = "millingTimeTextBox";
-            this.millingTimeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.millingTimeTextBox.TabIndex = 10;
+            this.textBox1.AccessibleName = "Под.работы/Фрезеровка/Время";
+            this.textBox1.Location = new System.Drawing.Point(75, 121);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 10;
             // 
             // textBox2
             // 
@@ -233,7 +233,7 @@
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.millingTimeTextBox);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -264,7 +264,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox millingTimeTextBox;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
