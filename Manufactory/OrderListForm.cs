@@ -29,6 +29,16 @@ namespace Manufactory
             this.actualGridView.AllowUserToAddRows = false;//Пока запретим редактировать заказы в этой форме
             this.pastGridView.AllowUserToAddRows = false;
             //this.FormClosed += new FormClosedEventHandler(this.enableMainForm);
+            //Задаем заголовки для обоих DataGridView
+
+            Dictionary<int, string> headings = Values.headings.ToDictionary(s => s.Value, s => s.Key);
+            var keyArray = headings.Keys.ToArray();
+            for (int i = 0; i < keyArray.Length; i++)
+            {
+                this.pastGridView.Columns.Add(headings[i], headings[i]);
+                this.actualGridView.Columns.Add(headings[i], headings[i]);
+
+            }
             loadOrderLists();
         }
         /// <summary>
@@ -40,14 +50,6 @@ namespace Manufactory
             Dictionary<int, string> headings = Values.headings.ToDictionary(s => s.Value, s => s.Key);
             var keyArray = headings.Keys.ToArray();
             //Array.Sort(keyArray);
-
-            //Задаем заголовки для обоих DataGridView
-            for (int i = 0; i < keyArray.Length; i++)
-            {
-                this.pastGridView.Columns.Add(headings[i], headings[i]);
-                this.actualGridView.Columns.Add(headings[i], headings[i]);
-
-            }
 
             //Вычитаем из i эти значения в методе setCellValue, чтобы заполнять соответствующие таблицы с нужного индекса (чтобы не выходить за рамки существующих строк)
             int actualBeginIndex = Values.currentRowIndex - Values.numberOfActualOrders;
