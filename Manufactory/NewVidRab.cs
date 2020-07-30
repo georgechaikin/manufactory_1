@@ -29,7 +29,7 @@ namespace Manufactory
             this.textBox1.TextChanged += (sender, e) => showCost(sender, e, textBox1, textBox5,17);
             this.textBox2.TextChanged += (sender, e) => showCost(sender, e, textBox2, textBox6,15.5);
             this.textBox3.TextChanged += (sender, e) => showCost(sender, e, textBox3, textBox7,12);
-            this.textBox4.TextChanged += (sender, e) => showCost(sender, e, textBox4, textBox8,750);
+            this.textBox4.TextChanged += (sender, e) => showCost(sender, e, textBox4, textBox8,25);
         }
 
         private void hideForm(object sender, EventArgs e)
