@@ -52,14 +52,14 @@ namespace Manufactory
         {
             throw new NotImplementedException();
         }
-        protected void showCost(object sender, EventArgs e,Control inputControl, Control outputControl,decimal price)//TODO: Поменять на decimal
+        protected void showCost(object sender, EventArgs e, Control inputControl, Control outputControl, decimal price)//TODO: Поменять на decimal
         {
-           
+
             try
             {
                 outputControl.Text = (Convert.ToDecimal(inputControl.Text) * price).ToString();
             }
-            catch(FormatException)
+            catch (FormatException)
             {
                 outputControl.Text = 0.ToString();
             }
